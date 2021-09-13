@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
-import Input from '@material-ui/core/Input';
+import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Search = () => {
     const {
@@ -39,6 +40,7 @@ const Search = () => {
     };
 
     const handleSubmit = () => {
+        console.log('Starting submit');
         fetch(`https://api.github.com/users/${search}`)
             .then((res) => res.json())
             .then((data) => {
@@ -53,22 +55,63 @@ const Search = () => {
                 <div id='stars2'></div>
                 <div id='stars3'></div>
             </div>
+
             <div
                 style={{
+                    display: 'block',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                     position: 'absolute',
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
+                    border: '2px solid purple',
                 }}>
-                <Input
-                    onChange={(e) => setSearch(e.target.value)}
-                    value={search}
-                    placeholder='Placeholder'
-                    inputProps={{ 'aria-label': 'description' }}
-                />
-                <Button onClick={handleSubmit} variant='contained'>
-                    Search
-                </Button>
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}>
+                    <GitHubIcon className='github-logo-search-main' />
+                </div>
+                {/* To be used to display a black background behind github logo */}
+                {/* <div style={{ display: 'flex', border: '2px solid blue' }}>
+                    <div className='github-logo-search-main-background' />
+                </div> */}
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        marginTop: '2rem',
+                        border: '2px solid blue',
+                    }}>
+                    <TextField
+                        variant='filled'
+                        onKeyPress={(ev) => {
+                            // console.log(`Pressed keyCode ${ev.key}`);
+                            if (ev.key === 'Enter') {
+                                handleSubmit();
+                            }
+                        }}
+                        onChange={(e) => setSearch(e.target.value)}
+                        value={search}
+                    />
+                </div>
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        marginTop: '2rem',
+                        fontFamily: 'Roboto',
+                    }}>
+                    <Button
+                        style={{
+                            textTransform: 'none',
+                        }}
+                        variant='contained'>
+                        Search
+                    </Button>
+                </div>
             </div>
         </>
     );

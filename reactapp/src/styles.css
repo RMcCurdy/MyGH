@@ -2,3 +2,74 @@ html, body {
     margin: 0;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+.github-logo-search-main {
+    color: white;
+    font-size: 120;
+    transform: scale(7);
+    margin-bottom: 64px;
+}
+
+.github-logo-search-main-background {
+    /* position: absolute; */
+    /* top: 41.5%;
+    left: 49.85%;
+    transform: translate(-41.5%, -49.85%); */
+    background-color: yellow;
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    .github-logo-search-main {
+        transform: scale(6);
+        margin-bottom: 56px;
+    }
+
+    .github-logo-search-main-background {
+        position: absolute;
+        top: 41.5%;
+        left: 50%;
+        transform: translate(-41.5%, -50%);
+        width: 144px;
+        height: 144px;
+    }
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .github-logo-search-main {
+        transform: scale(5);
+        margin-bottom: 48px;
+    }
+
+    .github-logo-search-main-background {
+        position: absolute;
+        top: 41.6%;
+        left: 50.5%;
+        transform: translate(-41.6%, -50.5%);
+        width: 120px;
+        height: 120px;
+    }
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    .github-logo-search-main {
+        transform: scale(4);
+        margin-bottom: 40px;
+    }
+
+    .github-logo-search-main-background {
+        position: absolute;
+        top: 41.5%;
+        left: 51.2%;
+        transform: translate(-41.5%, -51.2%);
+        width: 96px;
+        height: 96px;
+    }
+}
