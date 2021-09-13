@@ -38,6 +38,14 @@ const Search = () => {
         setNumOfRepos(public_repos);
     };
 
+    const handleSubmit = (e) => {
+        fetch(`https://api.github.com/users/${search}`)
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data);
+            });
+    };
+
     return (
         <>
             <div>Search</div>
@@ -47,7 +55,7 @@ const Search = () => {
                 placeholder='Placeholder'
                 inputProps={{ 'aria-label': 'description' }}
             />
-            <Button onClick={() => console.log(search)} variant='contained'>
+            <Button onClick={handleSubmit} variant='contained'>
                 Search
             </Button>
         </>
