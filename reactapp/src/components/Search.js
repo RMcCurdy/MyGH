@@ -48,15 +48,28 @@ const Search = () => {
 
     return (
         <>
-            <Input
-                onChange={(e) => setSearch(e.target.value)}
-                value={search}
-                placeholder='Placeholder'
-                inputProps={{ 'aria-label': 'description' }}
-            />
-            <Button onClick={handleSubmit} variant='contained'>
-                Search
-            </Button>
+            <div id='stars-container'>
+                <div id='stars'></div>
+                <div id='stars2'></div>
+                <div id='stars3'></div>
+            </div>
+            <div
+                style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                }}>
+                <Input
+                    onChange={(e) => setSearch(e.target.value)}
+                    value={search}
+                    placeholder='Placeholder'
+                    inputProps={{ 'aria-label': 'description' }}
+                />
+                <Button onClick={handleSubmit} variant='contained'>
+                    Search
+                </Button>
+            </div>
         </>
     );
 };

@@ -1,4 +1,5 @@
 import './styles.css';
+import './scssStyles.scss';
 import AppState from './context/AppState';
 import Navbar from './components/Navbar';
 
