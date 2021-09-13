@@ -15,9 +15,14 @@ const AppState = (props) => {
     const [following, setFollowing] = useState('');
     const [numOfRepos, setNumOfRepos] = useState('');
 
+    // Routes and navigation
+    const [path, setPath] = useState('');
+
     return (
         <AppContext.Provider
             value={{
+                path,
+                setPath,
                 searchBool,
                 setSearchBool,
                 search,

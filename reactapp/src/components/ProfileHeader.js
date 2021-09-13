@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 
 const ProfileHeader = () => {
-    const { name, userName, avatar, bio, followers, following, numOfRepos } =
+    const { userName, avatar, bio, followers, following, numOfRepos } =
         useContext(AppContext);
     return (
         <>
             <div>
                 <img src={avatar} alt='profile-pic'></img>
             </div>
-            <div>This is the name {name}</div>
             <div>This is the userName {userName}</div>
             <div>This is the bio {bio}</div>
             <div>This is the followers {followers}</div>

@@ -38,7 +38,7 @@ const Search = () => {
         setNumOfRepos(public_repos);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = () => {
         fetch(`https://api.github.com/users/${search}`)
             .then((res) => res.json())
             .then((data) => {
@@ -48,7 +48,6 @@ const Search = () => {
 
     return (
         <>
-            <div>Search</div>
             <Input
                 onChange={(e) => setSearch(e.target.value)}
                 value={search}

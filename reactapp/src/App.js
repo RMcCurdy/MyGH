@@ -1,15 +1,18 @@
 import './styles.css';
 import AppState from './context/AppState';
 import Navbar from './components/Navbar';
-import Search from './components/Search';
-import ProfileHeader from './components/ProfileHeader';
+
+// Routes
+import Routes from './components/routes/Routes';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
     return (
         <AppState>
-            <Navbar />
-            <Search />
-            <ProfileHeader />
+            <Router>
+                <Navbar />
+                <Routes />
+            </Router>
         </AppState>
     );
 }
