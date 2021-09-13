@@ -13,7 +13,7 @@ const Navbar = () => {
                 width: '100%',
                 height: '64px',
                 color: 'white',
-                fontFamily: 'Roboto',
+                fontFamily: 'Roboto-Regular',
                 backgroundColor: '#191F24',
                 borderBottom: '1px solid #34414b',
             }}>

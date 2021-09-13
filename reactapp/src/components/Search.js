@@ -3,14 +3,24 @@ import AppContext from '../context/AppContext';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    root: {
+        fontFamily: 'Roboto-Regular',
+        color: '#191F24',
+        backgroundColor: 'white',
+        textTransform: 'none',
+    },
+});
 
 const Search = () => {
+    const classes = useStyles();
+
     const {
         // Search bar context
         search,
         setSearch,
-        searchBool,
-        setSearchBool,
         // Setters for user information
         setName,
         setUserName,
@@ -104,11 +114,7 @@ const Search = () => {
                         marginTop: '2rem',
                         fontFamily: 'Roboto',
                     }}>
-                    <Button
-                        style={{
-                            textTransform: 'none',
-                        }}
-                        variant='contained'>
+                    <Button className={classes.root} variant='contained'>
                         Search
                     </Button>
                 </div>
