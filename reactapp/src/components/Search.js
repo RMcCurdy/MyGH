@@ -4,17 +4,21 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
     root: {
-        fontFamily: 'Roboto-Regular',
-        color: '#191F24',
-        backgroundColor: 'white',
-        textTransform: 'none',
+      color: 'black',
+      fontFamily: 'Roboto-Medium',
+      textTransform: 'none',
     },
-});
+    '.MuiInputBase-input': {
+        color: 'white',
+    },
+  });
 
 const Search = () => {
+
     const classes = useStyles();
 
     const {
@@ -103,6 +107,7 @@ const Search = () => {
                                 handleSubmit();
                             }
                         }}
+                        className={classes.root}
                         onChange={(e) => setSearch(e.target.value)}
                         value={search}
                     />
