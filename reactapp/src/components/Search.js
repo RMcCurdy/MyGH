@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { withStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 
 const CssTextField = withStyles({
     root: {
@@ -34,9 +35,14 @@ const CssButton = withStyles({
 })(Button);
 
 const Search = () => {
+    const history = useHistory();
+
     const {
+        setPath,
         search,
         setSearch,
+        searchBool,
+        setSearchBool,
         setName,
         setUserName,
         setAvatar,
@@ -69,9 +75,12 @@ const Search = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.message === 'Not Found') {
-                    console.log('ERROR');
+                    setSearch('');
+                    setSearchBool(false);
                 } else {
+                    setSearchBool(true);
                     setData(data);
+                    history.push(`/GitHubProfileOverviewAPI/${search}/`);
                 }
             });
     };
@@ -88,10 +97,16 @@ const Search = () => {
                     <GitHubIcon className='github-logo-search-main' />
                     {/* To be used to display a black background behind github logo */}
                 </div>
+                {searchBool === false ? (
+                    <div className='search-main-error-text'>
+                        Invalid Username, Please Try Again
+                    </div>
+                ) : (
+                    <div className='search-main-helper-text'>
+                        Enter a GitHub Username
+                    </div>
+                )}
 
-                <div className='search-main-helper-text'>
-                    Enter a GitHub Username
-                </div>
                 <div className='search-main-flex-container'>
                     <CssTextField
                         variant='outlined'

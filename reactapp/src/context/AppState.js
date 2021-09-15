@@ -4,7 +4,7 @@ import { useState } from 'react';
 const AppState = (props) => {
     // Search bar
     const [search, setSearch] = useState('');
-    const [searchBool, setSearchBool] = useState(false);
+    const [searchBool, setSearchBool] = useState('');
 
     // Current user information
     const [name, setName] = useState('');
