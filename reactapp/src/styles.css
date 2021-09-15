@@ -49,6 +49,21 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
+.search-main-helper-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    color: white;
+    font-family: 'Roboto-Light';
+}
+
+.search-main-flex-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
     .github-logo-search-main {

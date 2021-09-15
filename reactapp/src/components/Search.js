@@ -4,15 +4,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { withStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
-
-// const useStyles = makeStyles({
-//     root: {
-//         color: 'black',
-//         fontFamily: 'Roboto-Medium',
-//         textTransform: 'none',
-//     },
-// });
 
 const CssTextField = withStyles({
     root: {
@@ -36,7 +27,7 @@ const CssTextField = withStyles({
 const CssButton = withStyles({
     root: {
         textTransform: 'none',
-        fontFamily: 'Roboto-Medium',
+        fontFamily: 'Roboto-Regular',
         backgroundColor: 'white',
         color: '#191F24',
     },
@@ -44,10 +35,8 @@ const CssButton = withStyles({
 
 const Search = () => {
     const {
-        // Search bar context
         search,
         setSearch,
-        // Setters for user information
         setName,
         setUserName,
         setAvatar,
@@ -76,22 +65,19 @@ const Search = () => {
     };
 
     const handleSubmit = () => {
-        console.log('Starting submit');
         fetch(`https://api.github.com/users/${search}`)
             .then((res) => res.json())
             .then((data) => {
-                setData(data);
+                if (data.message === 'Not Found') {
+                    console.log('ERROR');
+                } else {
+                    setData(data);
+                }
             });
     };
 
     return (
         <>
-            <div id='stars-container'>
-                <div id='stars'></div>
-                <div id='stars2'></div>
-                <div id='stars3'></div>
-            </div>
-
             <div className='search-main-container'>
                 <div
                     style={{
@@ -103,27 +89,13 @@ const Search = () => {
                     {/* To be used to display a black background behind github logo */}
                 </div>
 
-                <div
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        marginTop: '2rem',
-                        fontSize: '1.25rem',
-                        color: 'white',
-                        fontFamily: 'Roboto-Light',
-                    }}>
+                <div className='search-main-helper-text'>
                     Enter a GitHub Username
                 </div>
-                <div
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        marginTop: '1rem',
-                    }}>
+                <div className='search-main-flex-container'>
                     <CssTextField
                         variant='outlined'
                         onKeyPress={(ev) => {
-                            // console.log(`Pressed keyCode ${ev.key}`);
                             if (ev.key === 'Enter') {
                                 handleSubmit();
                             }
@@ -132,14 +104,10 @@ const Search = () => {
                         value={search}
                     />
                 </div>
-                <div
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        marginTop: '1rem',
-                        fontFamily: 'Roboto',
-                    }}>
-                    <CssButton variant='contained'>Search</CssButton>
+                <div className='search-main-flex-container'>
+                    <CssButton onClick={handleSubmit} variant='contained'>
+                        Search
+                    </CssButton>
                 </div>
             </div>
         </>
