@@ -92,16 +92,7 @@ const Search = () => {
                 <div id='stars3'></div>
             </div>
 
-            <div
-                style={{
-                    display: 'block',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                }}>
+            <div className='search-main-container'>
                 <div
                     style={{
                         display: 'flex',
