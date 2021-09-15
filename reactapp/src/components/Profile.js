@@ -102,48 +102,18 @@ const Profile = () => {
                                 borderBottom: '1px solid #34414b',
                                 paddingBottom: '0.75rem',
                             }}>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flex: '1',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    color: 'white',
-                                    fontSize: '1.5rem',
-                                    fontFamily: 'Roboto-Light',
-                                    padding: '0 2rem',
-                                }}>
+                            <div className='profile-following-count-container'>
                                 <div>{numOfRepos}</div>
                                 <div style={{ fontSize: '1rem' }}>Repos</div>
                             </div>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flex: '1',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    color: 'white',
-                                    fontSize: '1.5rem',
-                                    fontFamily: 'Roboto-Light',
-                                    padding: '0 2rem',
-                                }}>
+                            <div className='profile-following-count-container'>
                                 <div>{followers}</div>
                                 <div style={{ fontSize: '1rem' }}>
                                     Followers
                                 </div>
                             </div>
 
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flex: '1',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    color: 'white',
-                                    fontSize: '1.5rem',
-                                    fontFamily: 'Roboto-Light',
-                                    padding: '0 2rem',
-                                }}>
+                            <div className='profile-following-count-container'>
                                 <div>{following}</div>
                                 <div style={{ fontSize: '1rem' }}>
                                     Following
@@ -152,8 +122,19 @@ const Profile = () => {
                         </div>
                     </div>
                     <div className='profile-second-fade-in'>
-                        <div style={{ color: 'white', fontSize: '2rem' }}>
-                            Profile Header2
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
                         </div>
                     </div>
                 </div>
