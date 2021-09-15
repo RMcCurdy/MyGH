@@ -4,7 +4,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { withStyles } from '@material-ui/core/styles';
-import { useHistory } from 'react-router-dom';
 
 const CssTextField = withStyles({
     root: {
@@ -35,10 +34,7 @@ const CssButton = withStyles({
 })(Button);
 
 const Search = () => {
-    const history = useHistory();
-
     const {
-        setPath,
         search,
         setSearch,
         searchBool,
@@ -80,7 +76,6 @@ const Search = () => {
                 } else {
                     setSearchBool(true);
                     setData(data);
-                    history.push(`/GitHubProfileOverviewAPI/${search}/`);
                 }
             });
     };

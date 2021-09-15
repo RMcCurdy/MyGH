@@ -5,10 +5,9 @@ import AppContext from '../../context/AppContext';
 // Pages
 import Search from '../Search';
 import About from '../About';
-import User from '../User';
 
 function Routes() {
-    const { setPath, search } = useContext(AppContext);
+    const { setPath } = useContext(AppContext);
 
     const location = useLocation();
 
@@ -28,11 +27,6 @@ function Routes() {
                     path='/GitHubProfileOverviewAPI/about/'
                     exact
                     component={About}
-                />
-                <Route
-                    path={`/GitHubProfileOverviewAPI/${search}/`}
-                    exact
-                    component={User}
                 />
                 {/* <Route path='/' exact component={Search} /> */}
             </Switch>
