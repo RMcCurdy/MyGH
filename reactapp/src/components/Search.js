@@ -108,6 +108,17 @@ const Search = () => {
                         display: 'flex',
                         justifyContent: 'center',
                         marginTop: '2rem',
+                        fontSize: '1.25rem',
+                        color: 'white',
+                        fontFamily: 'Roboto-Light',
+                    }}>
+                    Enter a GitHub Username
+                </div>
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        marginTop: '1rem',
                     }}>
                     <CssTextField
                         variant='outlined'
@@ -125,7 +136,7 @@ const Search = () => {
                     style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        marginTop: '2rem',
+                        marginTop: '1rem',
                         fontFamily: 'Roboto',
                     }}>
                     <CssButton variant='contained'>Search</CssButton>
