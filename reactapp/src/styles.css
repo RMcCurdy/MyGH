@@ -114,13 +114,15 @@ html, body {
 /* ========== Profile ========== */
 
 .transition-and-fade-container {
-	animation: transitionAndFadeContainer 2s;
+	animation-name: transitionAndFadeContainer;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
   	opacity: 0;
 }
 
 @keyframes transitionAndFadeContainer {
   from {
-  	opacity: 1;
+    opacity: 1;
   }
   to {
  	opacity: 0;

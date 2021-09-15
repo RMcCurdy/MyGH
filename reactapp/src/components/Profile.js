@@ -6,7 +6,6 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import { withStyles } from '@material-ui/core/styles';
 
 const Profile = () => {
-
     const {
         search,
         setSearch,
@@ -39,7 +38,7 @@ const Profile = () => {
             },
         },
     })(TextField);
-    
+
     const CssButton = withStyles({
         root: {
             textTransform: 'none',
@@ -51,37 +50,32 @@ const Profile = () => {
 
     return (
         <>
-        <div className='transition-and-fade-container'>
+            <div className='transition-and-fade-container'>
+                <div className='search-main-container'>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}>
+                        <div className='github-logo-search-main-background' />
+                        <GitHubIcon className='github-logo-search-main' />
+                        {/* To be used to display a black background behind github logo */}
+                    </div>
 
-        <div className='search-main-container'>
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-            }}>
-            <div className='github-logo-search-main-background' />
-            <GitHubIcon className='github-logo-search-main' />
-            {/* To be used to display a black background behind github logo */}
-        </div>
-        
-        <div className='search-main-helper-text'>
-            Enter a GitHub Username
-        </div>
+                    <div className='search-main-helper-text'>
+                        Enter a GitHub Username
+                    </div>
 
-        <div className='search-main-flex-container'>
-            <CssTextField
-                variant='outlined'
-                value={search}
-                />
-        </div>
-        <div className='search-main-flex-container'>
-            <CssButton variant='contained'>
-                Search
-            </CssButton>
-        </div>
+                    <div className='search-main-flex-container'>
+                        <CssTextField variant='outlined' value={search} />
+                    </div>
+                    <div className='search-main-flex-container'>
+                        <CssButton variant='contained'>Search</CssButton>
+                    </div>
                 </div>
-    </div></>
-    )
-}
+            </div>
+        </>
+    );
+};
 
-export default Profile
+export default Profile;
