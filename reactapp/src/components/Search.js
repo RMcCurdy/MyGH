@@ -3,24 +3,46 @@ import AppContext from '../context/AppContext';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
-const useStyles = makeStyles({
+// const useStyles = makeStyles({
+//     root: {
+//         color: 'black',
+//         fontFamily: 'Roboto-Medium',
+//         textTransform: 'none',
+//     },
+// });
+
+const CssTextField = withStyles({
     root: {
-      color: 'black',
-      fontFamily: 'Roboto-Medium',
-      textTransform: 'none',
+        '& .MuiOutlinedInput-root': {
+            color: 'white',
+            backgroundColor: '#191F24',
+            fontFamily: 'Roboto-Regular',
+            '& fieldset': {
+                border: '1px solid #495b69',
+            },
+            '&:hover fieldset': {
+                border: '2px solid #495b69',
+            },
+            '&.Mui-focused fieldset': {
+                border: '3px solid #495b69',
+            },
+        },
     },
-    '.MuiInputBase-input': {
-        color: 'white',
+})(TextField);
+
+const CssButton = withStyles({
+    root: {
+        textTransform: 'none',
+        fontFamily: 'Roboto-Medium',
+        backgroundColor: 'white',
+        color: '#191F24',
     },
-  });
+})(Button);
 
 const Search = () => {
-
-    const classes = useStyles();
-
     const {
         // Search bar context
         search,
@@ -79,35 +101,31 @@ const Search = () => {
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    border: '2px solid purple',
                 }}>
                 <div
                     style={{
                         display: 'flex',
                         justifyContent: 'center',
                     }}>
-                    <GitHubIcon className='github-logo-search-main' />
-                </div>
-                {/* To be used to display a black background behind github logo */}
-                {/* <div style={{ display: 'flex', border: '2px solid blue' }}>
                     <div className='github-logo-search-main-background' />
-                </div> */}
+                    <GitHubIcon className='github-logo-search-main' />
+                    {/* To be used to display a black background behind github logo */}
+                </div>
+
                 <div
                     style={{
                         display: 'flex',
                         justifyContent: 'center',
                         marginTop: '2rem',
-                        border: '2px solid blue',
                     }}>
-                    <TextField
-                        variant='filled'
+                    <CssTextField
+                        variant='outlined'
                         onKeyPress={(ev) => {
                             // console.log(`Pressed keyCode ${ev.key}`);
                             if (ev.key === 'Enter') {
                                 handleSubmit();
                             }
                         }}
-                        className={classes.root}
                         onChange={(e) => setSearch(e.target.value)}
                         value={search}
                     />
@@ -119,9 +137,7 @@ const Search = () => {
                         marginTop: '2rem',
                         fontFamily: 'Roboto',
                     }}>
-                    <Button className={classes.root} variant='contained'>
-                        Search
-                    </Button>
+                    <CssButton variant='contained'>Search</CssButton>
                 </div>
             </div>
         </>

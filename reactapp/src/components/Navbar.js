@@ -13,11 +13,11 @@ const Navbar = () => {
                 width: '100%',
                 height: '64px',
                 color: 'white',
-                fontFamily: 'Roboto-Regular',
-                backgroundColor: '#191F24',
+                fontFamily: 'Roboto-Medium',
+                backgroundColor: '#151a1e',
                 borderBottom: '1px solid #34414b',
             }}>
-            <div style={{ marginLeft: '32px' }}>MyGH</div>
+            <div style={{ marginLeft: '32px', fontSize: '1.5rem' }}>MyGH</div>
             <div style={{ marginRight: '32px' }}>About</div>
         </div>
     );

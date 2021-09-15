@@ -29,11 +29,11 @@ html, body {
 }
 
 .github-logo-search-main-background {
-    /* position: absolute; */
-    /* top: 41.5%;
-    left: 49.85%;
-    transform: translate(-41.5%, -49.85%); */
-    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50.5%, -116%);
+    background-color: #191F24;
     width: 168px;
     height: 168px;
     border-radius: 50%;
@@ -47,10 +47,7 @@ html, body {
     }
 
     .github-logo-search-main-background {
-        position: absolute;
-        top: 41.5%;
-        left: 50%;
-        transform: translate(-41.5%, -50%);
+        transform: translate(-50.5%, -123.5%);
         width: 144px;
         height: 144px;
     }
@@ -63,10 +60,7 @@ html, body {
     }
 
     .github-logo-search-main-background {
-        position: absolute;
-        top: 41.6%;
-        left: 50.5%;
-        transform: translate(-41.6%, -50.5%);
+        transform: translate(-50.5%, -135%);
         width: 120px;
         height: 120px;
     }
@@ -79,10 +73,7 @@ html, body {
     }
 
     .github-logo-search-main-background {
-        position: absolute;
-        top: 41.5%;
-        left: 51.2%;
-        transform: translate(-41.5%, -51.2%);
+        transform: translate(-50.5%, -153%);
         width: 96px;
         height: 96px;
     }
