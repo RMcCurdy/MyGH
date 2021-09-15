@@ -3,7 +3,7 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 
 // Pages
-import Search from '../Search';
+import SearchAndProfile from '../SearchAndProfile';
 import About from '../About';
 import PageNotFound from '../PageNotFound';
 
@@ -22,7 +22,7 @@ function Routes() {
                 <Route
                     path='/GitHubProfileOverviewAPI/'
                     exact
-                    component={Search}
+                    component={SearchAndProfile}
                 />
                 <Route
                     path='/GitHubProfileOverviewAPI/about/'

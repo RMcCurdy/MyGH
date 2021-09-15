@@ -76,6 +76,7 @@ const Search = () => {
                 } else {
                     setSearchBool(true);
                     setData(data);
+                    // Do a transform to fade the search div in replace for the profile div
                 }
             });
     };

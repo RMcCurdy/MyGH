@@ -111,6 +111,21 @@ html, body {
     color: #e6e6e6;
 }
 
+/* ========== Profile ========== */
+
+.transition-and-fade-container {
+	animation: transitionAndFadeContainer 2s;
+  	opacity: 0;
+}
+
+@keyframes transitionAndFadeContainer {
+  from {
+  	opacity: 1;
+  }
+  to {
+ 	opacity: 0;
+  }
+}
 
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
