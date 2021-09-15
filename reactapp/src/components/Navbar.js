@@ -13,12 +13,12 @@ const Navbar = () => {
         <>
             <div className='navbar-container'>
                 <div
-                    className='navbar-link'
+                    className='link'
                     onClick={() => {
                         handleNavbarClick('/GitHubProfileOverviewAPI/');
                     }}
                     style={{
-                        marginLeft: '32px',
+                        marginLeft: '2vw',
                         fontSize: '1.5rem',
                         display: 'flex',
                         alignItems: 'center',
@@ -27,11 +27,11 @@ const Navbar = () => {
                     <span style={{ paddingLeft: '0.5rem' }}>MyGH</span>
                 </div>
                 <div
-                    className='navbar-link'
+                    className='link'
                     onClick={() => {
                         handleNavbarClick('/GitHubProfileOverviewAPI/about');
                     }}
-                    style={{ marginRight: '32px' }}>
+                    style={{ marginRight: '2vw' }}>
                     About
                 </div>
             </div>

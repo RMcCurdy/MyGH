@@ -4,8 +4,15 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { withStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 
 const Profile = () => {
+    const history = useHistory();
+
+    const openGitHubUserWindow = (route) => {
+        window.open(`https://github.com/RMcCurdy?tab=${route}`, '_blank');
+    };
+
     const {
         search,
         setSearchBool,
@@ -86,6 +93,13 @@ const Profile = () => {
                                 alt='avatar'></img>
                         </div>
                         <div
+                            className='link'
+                            onClick={() => {
+                                window.open(
+                                    'https://github.com/RMcCurdy',
+                                    '_blank',
+                                );
+                            }}
                             style={{
                                 color: 'white',
                                 fontSize: '2rem',
@@ -102,18 +116,31 @@ const Profile = () => {
                                 borderBottom: '1px solid #34414b',
                                 paddingBottom: '0.75rem',
                             }}>
-                            <div className='profile-following-count-container'>
+                            <div
+                                onClick={() => {
+                                    openGitHubUserWindow('repositories');
+                                }}
+                                className='profile-following-count-container link'>
                                 <div>{numOfRepos}</div>
                                 <div style={{ fontSize: '1rem' }}>Repos</div>
                             </div>
-                            <div className='profile-following-count-container'>
+
+                            <div
+                                onClick={() => {
+                                    openGitHubUserWindow('followers');
+                                }}
+                                className='profile-following-count-container link'>
                                 <div>{followers}</div>
                                 <div style={{ fontSize: '1rem' }}>
                                     Followers
                                 </div>
                             </div>
 
-                            <div className='profile-following-count-container'>
+                            <div
+                                onClick={() => {
+                                    openGitHubUserWindow('following');
+                                }}
+                                className='profile-following-count-container link'>
                                 <div>{following}</div>
                                 <div style={{ fontSize: '1rem' }}>
                                     Following

@@ -103,11 +103,11 @@ html, body {
     border-bottom: 1px solid #34414b;
 }
 
-.navbar-link {
+.link {
     color: white;
 }
 
-.navbar-link:hover {
+.link:hover {
     cursor: pointer;
     color: #e6e6e6;
 }
@@ -144,6 +144,7 @@ html, body {
     width: 168px;
     height: 168px;
     border-radius: 50%;
+    border: 2px solid #495b69;
 }
 
 .transition-and-fade-container {
