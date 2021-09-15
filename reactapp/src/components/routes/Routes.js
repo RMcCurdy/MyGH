@@ -5,6 +5,7 @@ import AppContext from '../../context/AppContext';
 // Pages
 import Search from '../Search';
 import About from '../About';
+import PageNotFound from '../PageNotFound';
 
 function Routes() {
     const { setPath } = useContext(AppContext);
@@ -28,7 +29,7 @@ function Routes() {
                     exact
                     component={About}
                 />
-                {/* <Route path='/' exact component={Search} /> */}
+                <Route component={PageNotFound} />
             </Switch>
         </>
     );

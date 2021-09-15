@@ -1,25 +1,41 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Navbar = () => {
+    const history = useHistory();
+
+    const handleNavbarClick = (route) => {
+        history.push(route);
+    };
+
     return (
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                position: 'absolute',
-                top: '0%',
-                left: '0%',
-                width: '100%',
-                height: '64px',
-                color: 'white',
-                fontFamily: 'Roboto-Medium',
-                backgroundColor: '#151a1e',
-                borderBottom: '1px solid #34414b',
-            }}>
-            <div style={{ marginLeft: '32px', fontSize: '1.5rem' }}>MyGH</div>
-            <div style={{ marginRight: '32px' }}>About</div>
-        </div>
+        <>
+            <div className='navbar-container'>
+                <div
+                    className='navbar-link'
+                    onClick={() => {
+                        handleNavbarClick('/GitHubProfileOverviewAPI/');
+                    }}
+                    style={{
+                        marginLeft: '32px',
+                        fontSize: '1.5rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                    }}>
+                    <GitHubIcon />
+                    <span style={{ paddingLeft: '0.5rem' }}>MyGH</span>
+                </div>
+                <div
+                    className='navbar-link'
+                    onClick={() => {
+                        handleNavbarClick('/GitHubProfileOverviewAPI/about');
+                    }}
+                    style={{ marginRight: '32px' }}>
+                    About
+                </div>
+            </div>
+        </>
     );
 };
 
