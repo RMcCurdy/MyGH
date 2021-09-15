@@ -113,6 +113,26 @@ html, body {
 
 /* ========== Profile ========== */
 
+.profile-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-flex-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+}
+
 .transition-and-fade-container {
 	animation-name: transitionAndFadeContainer;
     animation-duration: 1s;
@@ -129,6 +149,31 @@ html, body {
   }
 }
 
+.profile-first-fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.profile-second-fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
     .github-logo-search-main {
@@ -138,6 +183,11 @@ html, body {
 
     .github-logo-search-main-background {
         transform: translate(-50.5%, -123.5%);
+        width: 144px;
+        height: 144px;
+    }
+
+    .profile-avatar {
         width: 144px;
         height: 144px;
     }
@@ -155,6 +205,11 @@ html, body {
         width: 120px;
         height: 120px;
     }
+
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 @media only screen and (max-width: 425px){
@@ -166,6 +221,11 @@ html, body {
 
     .github-logo-search-main-background {
         transform: translate(-50.5%, -153%);
+        width: 96px;
+        height: 96px;
+    }
+
+    .profile-avatar {
         width: 96px;
         height: 96px;
     }
@@ -182,6 +242,11 @@ html, body {
         transform: translate(-50.5%, -153%);
         width: 96px;
         height: 96px;
+    }
+
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
     }
 
     .search-main-container {
@@ -204,6 +269,11 @@ html, body {
         height: 72px;
     }
 
+    .profile-avatar {
+        width: 96px;
+        height: 96px;
+    }
+
     .search-main-container {
         top: 70%;
         left: 50%;
@@ -222,6 +292,11 @@ html, body {
         transform: translate(-50.5%, -153%);
         width: 48px;
         height: 48px;
+    }
+
+    .profile-avatar {
+        width: 72px;
+        height: 72px;
     }
 
     .search-main-container {

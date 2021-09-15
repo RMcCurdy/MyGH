@@ -8,16 +8,14 @@ import { withStyles } from '@material-ui/core/styles';
 const Profile = () => {
     const {
         search,
-        setSearch,
-        searchBool,
         setSearchBool,
-        setName,
-        setUserName,
-        setAvatar,
-        setBio,
-        setFollowers,
-        setFollowing,
-        setNumOfRepos,
+        name,
+        userName,
+        avatar,
+        bio,
+        followers,
+        following,
+        numOfRepos,
     } = useContext(AppContext);
 
     const CssTextField = withStyles({
@@ -71,6 +69,92 @@ const Profile = () => {
                     </div>
                     <div className='search-main-flex-container'>
                         <CssButton variant='contained'>Search</CssButton>
+                    </div>
+                </div>
+            </div>
+            <div className='profile-container'>
+                <div className='profile-flex-column'>
+                    <div className='profile-first-fade-in'>
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                            }}>
+                            <img
+                                className='profile-avatar'
+                                src={avatar}
+                                alt='avatar'></img>
+                        </div>
+                        <div
+                            style={{
+                                color: 'white',
+                                fontSize: '2rem',
+                                fontFamily: 'Roboto-Regular',
+                                textAlign: 'center',
+                                marginTop: '1rem',
+                            }}>
+                            {userName}
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                marginTop: '1rem',
+                                borderBottom: '1px solid #34414b',
+                                paddingBottom: '0.75rem',
+                            }}>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flex: '1',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    color: 'white',
+                                    fontSize: '1.5rem',
+                                    fontFamily: 'Roboto-Light',
+                                    padding: '0 2rem',
+                                }}>
+                                <div>{numOfRepos}</div>
+                                <div style={{ fontSize: '1rem' }}>Repos</div>
+                            </div>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flex: '1',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    color: 'white',
+                                    fontSize: '1.5rem',
+                                    fontFamily: 'Roboto-Light',
+                                    padding: '0 2rem',
+                                }}>
+                                <div>{followers}</div>
+                                <div style={{ fontSize: '1rem' }}>
+                                    Followers
+                                </div>
+                            </div>
+
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flex: '1',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    color: 'white',
+                                    fontSize: '1.5rem',
+                                    fontFamily: 'Roboto-Light',
+                                    padding: '0 2rem',
+                                }}>
+                                <div>{following}</div>
+                                <div style={{ fontSize: '1rem' }}>
+                                    Following
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='profile-second-fade-in'>
+                        <div style={{ color: 'white', fontSize: '2rem' }}>
+                            Profile Header2
+                        </div>
                     </div>
                 </div>
             </div>
