@@ -98,36 +98,25 @@ const Profile = () => {
                             alt='avatar'></img>
                     </div>
                     <div
-                        className='link'
                         onClick={() => {
                             window.open(
                                 'https://github.com/RMcCurdy',
                                 '_blank',
                             );
                         }}
-                        style={{
-                            color: 'white',
-                            fontSize: '2rem',
-                            fontFamily: 'Roboto-Regular',
-                            textAlign: 'center',
-                            marginTop: '1rem',
-                        }}>
+                        className='profile-username link'>
                         {userName}
                     </div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            marginTop: '1rem',
-                            borderBottom: '1px solid #34414b',
-                            paddingBottom: '0.75rem',
-                        }}>
+                    <div className='profile-followers-container'>
                         <div
                             onClick={() => {
                                 openGitHubUserWindow('repositories');
                             }}
                             className='profile-following-count-container link'>
                             <div>{numOfRepos}</div>
-                            <div style={{ fontSize: '1rem' }}>Repos</div>
+                            <div className='profile-followers-captions'>
+                                Repos
+                            </div>
                         </div>
 
                         <div
@@ -136,7 +125,9 @@ const Profile = () => {
                             }}
                             className='profile-following-count-container link'>
                             <div>{followers}</div>
-                            <div style={{ fontSize: '1rem' }}>Followers</div>
+                            <div className='profile-followers-captions'>
+                                Followers
+                            </div>
                         </div>
 
                         <div
@@ -145,23 +136,16 @@ const Profile = () => {
                             }}
                             className='profile-following-count-container link'>
                             <div>{following}</div>
-                            <div style={{ fontSize: '1rem' }}>Following</div>
+                            <div className='profile-followers-captions'>
+                                Following
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className='profile-second-fade-in'>
-                    <div
-                        style={{
-                            display: 'flex',
-                            textAlign: 'center',
-                            justifyContent: 'center',
-                            marginTop: '1rem',
-                            color: 'white',
-                            fontSize: '1.25rem',
-                            fontFamily: 'Roboto-Light',
-                        }}>
-                        <div style={{ maxWidth: '80%' }}>
-                            {bio === null ? <>No bio.</> : <>{bio}</>}
+                    <div className='profile-bio'>
+                        <div style={{ maxWidth: '90vw' }}>
+                            {bio === null ? <span>No bio.</span> : <>{bio}</>}
                         </div>
                     </div>
                 </div>
