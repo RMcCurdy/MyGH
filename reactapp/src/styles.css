@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     scroll-behavior: smooth;
-    background-color: #1B2735;
+    background-color: #191F24;
 }
 
 /* Variants of the Roboto font */
@@ -153,10 +153,11 @@ html, body {
 .profile-followers-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 1rem;
     border-bottom: 1px solid #34414b;
     padding-bottom: 0.75rem;
-    width: 40vw
+    width: 30vw
 }
 
 .profile-following-count-container {
@@ -242,6 +243,10 @@ html, body {
     .profile-avatar {
         width: 144px;
         height: 144px;
+    }
+
+    .profile-followers-container {
+        width: 40vw
     }
 }
 

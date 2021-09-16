@@ -107,42 +107,44 @@ const Profile = () => {
                         className='profile-username link'>
                         {userName}
                     </div>
-                    <div className='profile-followers-container'>
-                        <div
-                            onClick={() => {
-                                openGitHubUserWindow('repositories');
-                            }}
-                            className='profile-following-count-container link'>
-                            <div>{numOfRepos}</div>
-                            <div className='profile-followers-captions'>
-                                Repos
+                </div>
+                <div className='profile-second-fade-in'>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div className='profile-followers-container'>
+                            <div
+                                onClick={() => {
+                                    openGitHubUserWindow('repositories');
+                                }}
+                                className='profile-following-count-container link'>
+                                <div>{numOfRepos}</div>
+                                <div className='profile-followers-captions'>
+                                    Repos
+                                </div>
                             </div>
-                        </div>
 
-                        <div
-                            onClick={() => {
-                                openGitHubUserWindow('followers');
-                            }}
-                            className='profile-following-count-container link'>
-                            <div>{followers}</div>
-                            <div className='profile-followers-captions'>
-                                Followers
+                            <div
+                                onClick={() => {
+                                    openGitHubUserWindow('followers');
+                                }}
+                                className='profile-following-count-container link'>
+                                <div>{followers}</div>
+                                <div className='profile-followers-captions'>
+                                    Followers
+                                </div>
                             </div>
-                        </div>
 
-                        <div
-                            onClick={() => {
-                                openGitHubUserWindow('following');
-                            }}
-                            className='profile-following-count-container link'>
-                            <div>{following}</div>
-                            <div className='profile-followers-captions'>
-                                Following
+                            <div
+                                onClick={() => {
+                                    openGitHubUserWindow('following');
+                                }}
+                                className='profile-following-count-container link'>
+                                <div>{following}</div>
+                                <div className='profile-followers-captions'>
+                                    Following
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className='profile-second-fade-in'>
                     <div className='profile-bio'>
                         <div style={{ maxWidth: '90vw' }}>
                             {bio === null ? <span>No bio.</span> : <>{bio}</>}
