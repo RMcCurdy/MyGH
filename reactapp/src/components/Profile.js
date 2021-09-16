@@ -15,6 +15,7 @@ const Profile = () => {
 
     const {
         search,
+        searchBool,
         setSearchBool,
         name,
         userName,
@@ -55,10 +56,12 @@ const Profile = () => {
 
     return (
         <>
-            <div className='transition-and-fade-container'>
+            <div
+                style={{ marginTop: '113px' }}
+                className='transition-and-fade-container'>
                 <div
                     // Height of Navbar 65px + 32px
-                    style={{ marginTop: '113px' }}
+
                     className='search-main-container'>
                     <div
                         style={{
@@ -82,7 +85,7 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div style={{ marginTop: '97px' }} className='profile-container'>
+            <div style={{ marginTop: '48px' }} className='profile-container'>
                 <div className='profile-first-fade-in'>
                     <div
                         style={{

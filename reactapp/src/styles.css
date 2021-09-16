@@ -30,9 +30,6 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* top: 50%;
-    left: 50%; */
-    /* transform: translate(-50%, -50%); */
 }
 
 .search-main-helper-text {
@@ -118,28 +115,31 @@ html, body {
 	animation-name: transitionAndFadeContainer;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    will-change: opacity, transform, visibility, max-height;
+    will-change: opacity, transform, visibility, max-height, margin-top;
 }
 
 @keyframes transitionAndFadeContainer {
-  0% {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
-    max-height: 10000px;
-  }
-  99% {
-    opacity: 0;
-    transform: translateY(-10%);
-    visibility: visible;
-    max-height: 10000px;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-10%);
-    visibility: hidden;
-    max-height: 0px;
-  }
+    0% {
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+        max-height: 10000px;
+        margin-top: 113px;
+    }
+    99% {
+        opacity: 0;
+        transform: translateY(-10%);
+        visibility: visible;
+        max-height: 10000px;
+        margin-top: 113px;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10%);
+        visibility: hidden;
+        max-height: 0px;
+        margin-top: 0px;
+    }
 }
 
 .profile-container {
@@ -186,11 +186,13 @@ html, body {
 }
 
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
+        transform: translateY(10%);
     }
-    to {
+    100% {
         opacity: 1;
+        transform: none;
     }
 }
 
