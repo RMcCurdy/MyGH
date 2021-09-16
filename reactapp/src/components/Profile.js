@@ -163,6 +163,370 @@ const Profile = () => {
                                 {bio === null ? <>No bio.</> : <>{bio}</>}
                             </div>
                         </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginTop: '1rem',
+                                color: 'white',
+                                fontSize: '1.25rem',
+                                fontFamily: 'Roboto-Light',
+                            }}>
+                            <div style={{ maxWidth: '80%' }}>
+                                {bio === null ? <>No bio.</> : <>{bio}</>}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
