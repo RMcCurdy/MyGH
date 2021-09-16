@@ -19,16 +19,8 @@ function Routes() {
     return (
         <>
             <Switch>
-                <Route
-                    path='/GitHubProfileOverviewAPI/'
-                    exact
-                    component={SearchAndProfile}
-                />
-                <Route
-                    path='/GitHubProfileOverviewAPI/about/'
-                    exact
-                    component={About}
-                />
+                <Route path='/MyGH/' exact component={SearchAndProfile} />
+                <Route path='/MyGH/about/' exact component={About} />
                 <Route component={PageNotFound} />
             </Switch>
         </>

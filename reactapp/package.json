@@ -2,7 +2,7 @@
   "name": "reactapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rmccurdy.github.io/GitHubProfileOverviewAPI",
+  "homepage": "https://rmccurdy.github.io/MyGH",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",

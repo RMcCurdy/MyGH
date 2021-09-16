@@ -1,1 +1,1 @@
-# GitHubProfileOverviewAPI
+# MyGH

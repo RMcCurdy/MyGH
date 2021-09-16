@@ -15,7 +15,7 @@ const Navbar = () => {
                 <div
                     className='link'
                     onClick={() => {
-                        handleNavbarClick('/GitHubProfileOverviewAPI/');
+                        handleNavbarClick('/MyGH/');
                     }}
                     style={{
                         marginLeft: '2vw',
@@ -29,7 +29,7 @@ const Navbar = () => {
                 <div
                     className='link'
                     onClick={() => {
-                        handleNavbarClick('/GitHubProfileOverviewAPI/about');
+                        handleNavbarClick('/MyGH/about');
                     }}
                     style={{ marginRight: '2vw' }}>
                     About
