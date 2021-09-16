@@ -56,13 +56,16 @@ const Profile = () => {
     return (
         <>
             <div className='transition-and-fade-container'>
-                <div className='search-main-container'>
+                <div
+                    // Height of Navbar 65px + 32px
+                    style={{ marginTop: '113px' }}
+                    className='search-main-container'>
                     <div
                         style={{
                             display: 'flex',
                             justifyContent: 'center',
                         }}>
-                        <div className='github-logo-search-main-background' />
+                        {/* <div className='github-logo-search-main-background' /> */}
                         <GitHubIcon className='github-logo-search-main' />
                         {/* To be used to display a black background behind github logo */}
                     </div>
@@ -79,453 +82,83 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div className='profile-container'>
-                <div className='profile-flex-column'>
-                    <div className='profile-first-fade-in'>
+            <div style={{ marginTop: '97px' }} className='profile-container'>
+                <div className='profile-first-fade-in'>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}>
+                        <img
+                            className='profile-avatar'
+                            src={avatar}
+                            alt='avatar'></img>
+                    </div>
+                    <div
+                        className='link'
+                        onClick={() => {
+                            window.open(
+                                'https://github.com/RMcCurdy',
+                                '_blank',
+                            );
+                        }}
+                        style={{
+                            color: 'white',
+                            fontSize: '2rem',
+                            fontFamily: 'Roboto-Regular',
+                            textAlign: 'center',
+                            marginTop: '1rem',
+                        }}>
+                        {userName}
+                    </div>
+                    <div
+                        style={{
+                            display: 'flex',
+                            marginTop: '1rem',
+                            borderBottom: '1px solid #34414b',
+                            paddingBottom: '0.75rem',
+                        }}>
                         <div
-                            style={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                            }}>
-                            <img
-                                className='profile-avatar'
-                                src={avatar}
-                                alt='avatar'></img>
-                        </div>
-                        <div
-                            className='link'
                             onClick={() => {
-                                window.open(
-                                    'https://github.com/RMcCurdy',
-                                    '_blank',
-                                );
+                                openGitHubUserWindow('repositories');
                             }}
-                            style={{
-                                color: 'white',
-                                fontSize: '2rem',
-                                fontFamily: 'Roboto-Regular',
-                                textAlign: 'center',
-                                marginTop: '1rem',
-                            }}>
-                            {userName}
+                            className='profile-following-count-container link'>
+                            <div>{numOfRepos}</div>
+                            <div style={{ fontSize: '1rem' }}>Repos</div>
                         </div>
+
                         <div
-                            style={{
-                                display: 'flex',
-                                marginTop: '1rem',
-                                borderBottom: '1px solid #34414b',
-                                paddingBottom: '0.75rem',
-                            }}>
-                            <div
-                                onClick={() => {
-                                    openGitHubUserWindow('repositories');
-                                }}
-                                className='profile-following-count-container link'>
-                                <div>{numOfRepos}</div>
-                                <div style={{ fontSize: '1rem' }}>Repos</div>
-                            </div>
+                            onClick={() => {
+                                openGitHubUserWindow('followers');
+                            }}
+                            className='profile-following-count-container link'>
+                            <div>{followers}</div>
+                            <div style={{ fontSize: '1rem' }}>Followers</div>
+                        </div>
 
-                            <div
-                                onClick={() => {
-                                    openGitHubUserWindow('followers');
-                                }}
-                                className='profile-following-count-container link'>
-                                <div>{followers}</div>
-                                <div style={{ fontSize: '1rem' }}>
-                                    Followers
-                                </div>
-                            </div>
-
-                            <div
-                                onClick={() => {
-                                    openGitHubUserWindow('following');
-                                }}
-                                className='profile-following-count-container link'>
-                                <div>{following}</div>
-                                <div style={{ fontSize: '1rem' }}>
-                                    Following
-                                </div>
-                            </div>
+                        <div
+                            onClick={() => {
+                                openGitHubUserWindow('following');
+                            }}
+                            className='profile-following-count-container link'>
+                            <div>{following}</div>
+                            <div style={{ fontSize: '1rem' }}>Following</div>
                         </div>
                     </div>
-                    <div className='profile-second-fade-in'>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginTop: '1rem',
-                                color: 'white',
-                                fontSize: '1.25rem',
-                                fontFamily: 'Roboto-Light',
-                            }}>
-                            <div style={{ maxWidth: '80%' }}>
-                                {bio === null ? <>No bio.</> : <>{bio}</>}
-                            </div>
+                </div>
+                <div className='profile-second-fade-in'>
+                    <div
+                        style={{
+                            display: 'flex',
+                            textAlign: 'center',
+                            justifyContent: 'center',
+                            marginTop: '1rem',
+                            color: 'white',
+                            fontSize: '1.25rem',
+                            fontFamily: 'Roboto-Light',
+                        }}>
+                        <div style={{ maxWidth: '80%' }}>
+                            {bio === null ? <>No bio.</> : <>{bio}</>}
                         </div>
                     </div>
                 </div>

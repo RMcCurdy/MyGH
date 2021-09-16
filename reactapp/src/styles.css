@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     scroll-behavior: smooth;
+    background-color: #1B2735;
 }
 
 /* Variants of the Roboto font */
@@ -24,13 +25,14 @@ html, body {
 /* ========== Search ========== */
 
 .search-main-container {
-    display: block;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
 }
 
 .search-main-helper-text {
@@ -50,6 +52,7 @@ html, body {
     font-size: 1.25rem;
     color: rgb(223, 104, 104);
     font-family: 'Roboto-Light';
+    text-align: center;
 }
 
 .search-main-flex-container {
@@ -67,10 +70,9 @@ html, body {
 
 .github-logo-search-main-background {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50.5%, -116%);
-    background-color: #191F24;
+
+    /* background-color: #191F24; */
+    background-color: yellow;
     width: 168px;
     height: 168px;
     border-radius: 50%;
@@ -93,9 +95,6 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    top: 0%;
-    left: 0%;
     width: 100%;
     height: 64px;
     font-family: 'Roboto-Medium';
@@ -114,18 +113,40 @@ html, body {
 
 /* ========== Profile ========== */
 
-.profile-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 95vh;
+/* Fades out the old search menu */
+.transition-and-fade-container {
+	animation-name: transitionAndFadeContainer;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    will-change: opacity, transform, visibility, max-height;
 }
 
-.profile-flex-column {
+@keyframes transitionAndFadeContainer {
+  0% {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    max-height: 10000px;
+  }
+  99% {
+    opacity: 0;
+    transform: translateY(-10%);
+    visibility: visible;
+    max-height: 10000px;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10%);
+    visibility: hidden;
+    max-height: 0px;
+  }
+}
+
+.profile-container {
     display: flex;
     flex: 1;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -146,22 +167,6 @@ html, body {
     height: 168px;
     border-radius: 50%;
     border: 2px solid #495b69;
-}
-
-.transition-and-fade-container {
-	animation-name: transitionAndFadeContainer;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-  	opacity: 0;
-}
-
-@keyframes transitionAndFadeContainer {
-  from {
-    opacity: 1;
-  }
-  to {
- 	opacity: 0;
-  }
 }
 
 .profile-first-fade-in {

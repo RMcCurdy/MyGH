@@ -83,13 +83,16 @@ const Search = () => {
 
     return (
         <>
-            <div className='search-main-container'>
+            <div
+                // Height of Navbar 65px + 48px
+                style={{ marginTop: '113px' }}
+                className='search-main-container'>
                 <div
                     style={{
                         display: 'flex',
                         justifyContent: 'center',
                     }}>
-                    <div className='github-logo-search-main-background' />
+                    {/* <div className='github-logo-search-main-background' /> */}
                     <GitHubIcon className='github-logo-search-main' />
                     {/* To be used to display a black background behind github logo */}
                 </div>
