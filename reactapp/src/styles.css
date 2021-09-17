@@ -106,6 +106,7 @@ html, body {
 .link:hover {
     cursor: pointer;
     color: #e6e6e6;
+    text-decoration: underline;
 }
 
 /* ========== Profile ========== */
@@ -202,6 +203,14 @@ html, body {
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.profile-third-fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
     opacity: 0;
 }

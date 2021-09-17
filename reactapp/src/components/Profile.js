@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { withStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+import PieChartLanguagesUsed from './pieChart/PieChartLanguagesUsed';
 
 const Profile = () => {
     const history = useHistory();
@@ -115,9 +116,9 @@ const Profile = () => {
                                 onClick={() => {
                                     openGitHubUserWindow('repositories');
                                 }}
-                                className='profile-following-count-container link'>
+                                className='profile-following-count-container'>
                                 <div>{numOfRepos}</div>
-                                <div className='profile-followers-captions'>
+                                <div className='profile-followers-captions link'>
                                     Repos
                                 </div>
                             </div>
@@ -126,9 +127,9 @@ const Profile = () => {
                                 onClick={() => {
                                     openGitHubUserWindow('followers');
                                 }}
-                                className='profile-following-count-container link'>
+                                className='profile-following-count-container'>
                                 <div>{followers}</div>
-                                <div className='profile-followers-captions'>
+                                <div className='profile-followers-captions link'>
                                     Followers
                                 </div>
                             </div>
@@ -137,9 +138,9 @@ const Profile = () => {
                                 onClick={() => {
                                     openGitHubUserWindow('following');
                                 }}
-                                className='profile-following-count-container link'>
+                                className='profile-following-count-container'>
                                 <div>{following}</div>
-                                <div className='profile-followers-captions'>
+                                <div className='profile-followers-captions link'>
                                     Following
                                 </div>
                             </div>
@@ -149,6 +150,17 @@ const Profile = () => {
                         <div style={{ maxWidth: '90vw' }}>
                             {bio === null ? <span>No bio.</span> : <>{bio}</>}
                         </div>
+                    </div>
+                </div>
+                <div className='profile-third-fade-in'>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            width: '80vw',
+                            marginTop: '1.5rem',
+                        }}>
+                        <PieChartLanguagesUsed />
                     </div>
                 </div>
             </div>
