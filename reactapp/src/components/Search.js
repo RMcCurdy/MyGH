@@ -40,12 +40,19 @@ const Search = () => {
         searchBool,
         setSearchBool,
         setName,
+        userName,
         setUserName,
         setAvatar,
         setBio,
         setFollowers,
         setFollowing,
         setNumOfRepos,
+        repos,
+        setRepos,
+        languages,
+        setLanguages,
+        languagePercentages,
+        setLanguagePercentages,
     } = useContext(AppContext);
 
     const setData = ({
@@ -66,6 +73,15 @@ const Search = () => {
         setNumOfRepos(public_repos);
     };
 
+    const setLanguagesUsed = () => {
+        fetch(`https://api.github.com/users/${search}/repos`)
+            .then((res) => res.json())
+            .then((repoData) => {
+                setRepos(repoData);
+                console.log(repoData);
+            });
+    };
+
     const handleSubmit = () => {
         fetch(`https://api.github.com/users/${search}`)
             .then((res) => res.json())
@@ -74,11 +90,11 @@ const Search = () => {
                     setSearch('');
                     setSearchBool(false);
                 } else {
-                    setSearchBool(true);
                     setData(data);
-                    // Do a transform to fade the search div in replace for the profile div
                 }
             });
+        setLanguagesUsed();
+        setSearchBool(true);
     };
 
     return (

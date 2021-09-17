@@ -14,6 +14,9 @@ const AppState = (props) => {
     const [followers, setFollowers] = useState('');
     const [following, setFollowing] = useState('');
     const [numOfRepos, setNumOfRepos] = useState('');
+    const [repos, setRepos] = useState([]);
+    const [languages, setLanguages] = useState([]);
+    const [languagePercentages, setLanguagePercentages] = useState([]);
 
     // Routes and navigation
     const [path, setPath] = useState('');
@@ -41,6 +44,12 @@ const AppState = (props) => {
                 setFollowing,
                 numOfRepos,
                 setNumOfRepos,
+                repos,
+                setRepos,
+                languages,
+                setLanguages,
+                languagePercentages,
+                setLanguagePercentages,
             }}>
             {props.children}
         </AppContext.Provider>
