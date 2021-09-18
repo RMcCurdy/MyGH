@@ -35,15 +35,7 @@ const PieChartLanguagesUsed = () => {
     let chartInstance = null;
     return (
         <>
-            <div
-                style={{
-                    width: '20%',
-                    height: '20%',
-                    border: '2px solid #495b69',
-                    padding: '1rem',
-                    borderRadius: '10%',
-                    backgroundColor: '#1f272d',
-                }}>
+            <div className='chart-pie-languages-used-container'>
                 <div
                     style={{
                         display: 'flex',

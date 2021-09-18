@@ -14,7 +14,7 @@ const Navbar = () => {
             <div className='navbar-container'>
                 <div
                     style={{
-                        marginLeft: '2vw',
+                        marginLeft: '5vw',
                         fontSize: '1.5rem',
                         display: 'flex',
                         alignItems: 'center',
@@ -28,7 +28,7 @@ const Navbar = () => {
                     onClick={() => {
                         handleNavbarClick('/MyGH/about');
                     }}
-                    style={{ marginRight: '2vw' }}>
+                    style={{ marginRight: '5vw' }}>
                     About
                 </div>
             </div>

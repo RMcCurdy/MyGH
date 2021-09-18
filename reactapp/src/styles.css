@@ -1,7 +1,11 @@
-html, body {
+html {
     margin: 0;
     scroll-behavior: smooth;
     background-color: #191F24;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 /* Variants of the Roboto font */
@@ -92,7 +96,11 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    z-index: 1;
     height: 64px;
     font-family: 'Roboto-Medium';
     background-color: #151a1e;
@@ -123,14 +131,14 @@ html, body {
         transform: none;
         visibility: visible;
         max-height: 10000px;
-        margin-top: 113px;
+        margin-top: 161px;
     }
     99% {
         opacity: 0;
         transform: translateY(-10%);
         visibility: visible;
         max-height: 10000px;
-        margin-top: 113px;
+        margin-top: 161px;
     }
     100% {
         opacity: 0;
@@ -155,14 +163,14 @@ html, body {
         transform: translateY(-10%);
         visibility: hidden;
         max-height: 10000px;
-        margin-top: 113px;
+        margin-top: 161px;
     }
     99% {
         opacity: 1;
         transform: none;
         visibility: visible;
         max-height: 10000px;
-        margin-top: 113px;
+        margin-top: 161px;
     }
     100% {
         opacity: 1;
@@ -184,7 +192,7 @@ html, body {
 }
 
 .profile-margin-top {
-    margin-top: 48px;
+    margin-top: 96px;
 }
 
 .profile-back-button {
@@ -318,6 +326,24 @@ html, body {
     max-width: 60vw;
 }
 
+.profile-chart-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80vw;
+    margin-top: 1.5rem;
+}
+
+/* ========== Charts ========== */
+
+.chart-pie-languages-used-container {
+    width: 25%;
+    height: 25%;
+    border: 2px solid #495b69;
+    padding: 1rem;
+    border-radius: 10%;
+    background-color: #1f272d;
+}
+
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
     .github-logo-search-main {
@@ -339,6 +365,32 @@ html, body {
     .profile-followers-container {
         width: 40vw
     }
+
+    .profile-chart-container {
+        display: flex;
+        justify-content: space-between;
+        width: 95vw;
+        margin-top: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 900px){
+
+    .profile-chart-container {
+        display: block;
+        width: 95vw;
+        margin-top: 1.5rem;
+    }
+
+    .chart-pie-languages-used-container {
+        width: 40%;
+        height: 40%;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 @media only screen and (max-width: 600px){
@@ -384,7 +436,7 @@ html, body {
     }
 
     .profile-margin-top {
-        margin-top: 16px;
+        margin-top: 64px;
     }
 
     .profile-bio {
@@ -393,6 +445,14 @@ html, body {
 
     .profile-back-button-text {
         font-size: 1rem;                               
+    }
+
+    .chart-pie-languages-used-container {
+        width: 70%;
+        height: 70%;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }

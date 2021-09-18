@@ -57,17 +57,9 @@ $stars-small:  generateStars(700);
 $stars-medium: generateStars(200);
 $stars-big:    generateStars(100);
 
-body
-{
-  overflow: hidden;
-}
-
 #stars-container
 {
-  height: 100vh;
-  width: 100vw;
-  background: radial-gradient(ellipse at bottom, #1B2735 0%, #191F24 100%);
-  overflow: hidden;
+  // background: radial-gradient(ellipse at bottom, #1B2735 0%, #191F24 100%);
   @include translate50;
 }
     

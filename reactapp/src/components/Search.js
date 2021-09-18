@@ -125,7 +125,7 @@ const Search = () => {
         <>
             {animation === true ? (
                 <div
-                    style={{ marginTop: '113px' }}
+                    style={{ marginTop: '161px' }}
                     className='transition-and-fade-out-container'>
                     <div
                         // Height of Navbar 65px + 32px
@@ -157,7 +157,7 @@ const Search = () => {
                 <div className='transition-and-fade-in-container'>
                     <div
                         // Height of Navbar 65px + 48px
-                        style={{ marginTop: '113px' }}
+                        style={{ marginTop: '161px' }}
                         className='search-main-container'>
                         <div
                             style={{

@@ -12,7 +12,7 @@ function App() {
         <AppState>
             <Router>
                 <Navbar />
-                <div style={{ backgroundSize: 'cover' }} id='stars-container'>
+                <div id='stars-container'>
                     <div id='stars'></div>
                     <div id='stars2'></div>
                     <div id='stars3'></div>

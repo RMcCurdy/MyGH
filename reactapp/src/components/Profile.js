@@ -126,14 +126,10 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className='profile-third-fade-in'>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    width: '80vw',
-                                    marginTop: '1.5rem',
-                                }}>
+                            <div className='profile-chart-container'>
                                 <PieChartLanguagesUsed />
+
+                                {/* TODO add 2 more charts here */}
                             </div>
                         </div>
                     </div>
@@ -230,13 +226,7 @@ const Profile = () => {
                                 </div>
                             </div>
                             <div>
-                                <div
-                                    style={{
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        width: '80vw',
-                                        marginTop: '1.5rem',
-                                    }}>
+                                <div className='profile-chart-container'>
                                     <PieChartLanguagesUsed />
                                 </div>
                             </div>
