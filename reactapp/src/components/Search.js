@@ -79,8 +79,19 @@ const Search = () => {
         fetch(`https://api.github.com/users/${search}/repos`)
             .then((res) => res.json())
             .then((repoData) => {
+                // TODO add in the logic for language breakdown
                 setRepos(repoData);
-                console.log(repoData);
+                const repoLanguageArray = [];
+                for (let i = 0; i < repoData.length; i++) {
+                    const currentRepoName = repoData[i].name;
+                    fetch(
+                        `https://api.github.com/repos/${search}/${currentRepoName}/languages`,
+                    )
+                        .then((res) => res.json())
+                        .then((repoLanguageData) => {
+                            repoLanguageArray.push(repoLanguageData);
+                        });
+                }
             });
     };
 

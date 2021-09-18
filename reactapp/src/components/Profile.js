@@ -48,13 +48,7 @@ const Profile = () => {
                             onClick={backButtonClick}
                             className='profile-last-fade-in profile-back-button link'>
                             <CssArrowBack />
-                            <span
-                                style={{
-                                    marginLeft: '0.5rem',
-                                    color: 'white',
-                                    fontSize: '1.25rem',
-                                    fontFamily: 'Roboto-Light',
-                                }}>
+                            <span className='profile-back-button-text'>
                                 Back
                             </span>
                         </div>
@@ -124,13 +118,11 @@ const Profile = () => {
                                 </div>
                             </div>
                             <div className='profile-bio'>
-                                <div style={{ maxWidth: '90vw' }}>
-                                    {bio === null ? (
-                                        <span>No bio.</span>
-                                    ) : (
-                                        <>{bio}</>
-                                    )}
-                                </div>
+                                {bio === null ? (
+                                    <span>No bio.</span>
+                                ) : (
+                                    <>{bio}</>
+                                )}
                             </div>
                         </div>
                         <div className='profile-third-fade-in'>
@@ -154,13 +146,7 @@ const Profile = () => {
                                 onClick={backButtonClick}
                                 className='profile-back-button link'>
                                 <CssArrowBack />
-                                <span
-                                    style={{
-                                        marginLeft: '0.5rem',
-                                        color: 'white',
-                                        fontSize: '1.25rem',
-                                        fontFamily: 'Roboto-Light',
-                                    }}>
+                                <span className='profile-back-button-text'>
                                     Back
                                 </span>
                             </div>
@@ -234,7 +220,7 @@ const Profile = () => {
                                     </div>
                                 </div>
                                 <div className='profile-bio'>
-                                    <div style={{ maxWidth: '90vw' }}>
+                                    <div className='profile-bio'>
                                         {bio === null ? (
                                             <span>No bio.</span>
                                         ) : (

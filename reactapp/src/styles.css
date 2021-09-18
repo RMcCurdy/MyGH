@@ -194,6 +194,13 @@ html, body {
     width: 60vw;
 }
 
+.profile-back-button-text {
+    margin-left: 0.5rem;
+    color: white;
+    font-size: 1.25rem;
+    font-family: 'Roboto-Light';                                
+}
+
 .profile-followers-container {
     display: flex;
     justify-content: space-between;
@@ -308,6 +315,7 @@ html, body {
     color: white;
     font-size: 1.25rem;
     font-family: 'Roboto-Light';
+    max-width: 60vw;
 }
 
 @media only screen and (max-width: 1200px){
@@ -377,6 +385,14 @@ html, body {
 
     .profile-margin-top {
         margin-top: 16px;
+    }
+
+    .profile-bio {
+        max-width: 90vw;
+    }
+
+    .profile-back-button-text {
+        font-size: 1rem;                               
     }
 
 }
