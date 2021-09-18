@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/MyGH/static/css/main.e231b74e.chunk.css",
-    "main.js": "/MyGH/static/js/main.e7de4d63.chunk.js",
-    "main.js.map": "/MyGH/static/js/main.e7de4d63.chunk.js.map",
+    "main.css": "/MyGH/static/css/main.3707b0a0.chunk.css",
+    "main.js": "/MyGH/static/js/main.a8551f8c.chunk.js",
+    "main.js.map": "/MyGH/static/js/main.a8551f8c.chunk.js.map",
     "runtime-main.js": "/MyGH/static/js/runtime-main.c9ec5a0c.js",
     "runtime-main.js.map": "/MyGH/static/js/runtime-main.c9ec5a0c.js.map",
-    "static/js/2.021eb0d8.chunk.js": "/MyGH/static/js/2.021eb0d8.chunk.js",
-    "static/js/2.021eb0d8.chunk.js.map": "/MyGH/static/js/2.021eb0d8.chunk.js.map",
+    "static/js/2.5a52665d.chunk.js": "/MyGH/static/js/2.5a52665d.chunk.js",
+    "static/js/2.5a52665d.chunk.js.map": "/MyGH/static/js/2.5a52665d.chunk.js.map",
     "index.html": "/MyGH/index.html",
-    "static/css/main.e231b74e.chunk.css.map": "/MyGH/static/css/main.e231b74e.chunk.css.map",
-    "static/js/2.021eb0d8.chunk.js.LICENSE.txt": "/MyGH/static/js/2.021eb0d8.chunk.js.LICENSE.txt",
+    "static/css/main.3707b0a0.chunk.css.map": "/MyGH/static/css/main.3707b0a0.chunk.css.map",
+    "static/js/2.5a52665d.chunk.js.LICENSE.txt": "/MyGH/static/js/2.5a52665d.chunk.js.LICENSE.txt",
     "static/media/styles.css": "/MyGH/static/media/Roboto-Regular.a8d6ac03.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.c9ec5a0c.js",
-    "static/js/2.021eb0d8.chunk.js",
-    "static/css/main.e231b74e.chunk.css",
-    "static/js/main.e7de4d63.chunk.js"
+    "static/js/2.5a52665d.chunk.js",
+    "static/css/main.3707b0a0.chunk.css",
+    "static/js/main.a8551f8c.chunk.js"
   ]
 }
