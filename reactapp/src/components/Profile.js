@@ -43,9 +43,7 @@ const Profile = () => {
         <>
             {animation === true ? (
                 <>
-                    <div
-                        style={{ marginTop: '48px' }}
-                        className='profile-container'>
+                    <div className='profile-container profile-margin-top'>
                         <div
                             onClick={backButtonClick}
                             className='profile-last-fade-in profile-back-button link'>
@@ -151,9 +149,7 @@ const Profile = () => {
             ) : (
                 <>
                     <div className='transition-and-fade-out-profile-container'>
-                        <div
-                            style={{ marginTop: '48px' }}
-                            className='profile-container'>
+                        <div className='profile-container profile-margin-top'>
                             <div
                                 onClick={backButtonClick}
                                 className='profile-back-button link'>

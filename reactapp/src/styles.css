@@ -183,6 +183,10 @@ html, body {
     align-items: center;
 }
 
+.profile-margin-top {
+    margin-top: 48px;
+}
+
 .profile-back-button {
     display: flex;
     justify-content: flex-start;
@@ -366,6 +370,15 @@ html, body {
     .profile-followers-container {
         width: 70vw
     }
+
+    .profile-back-button {
+        width: 90vw;
+    }
+
+    .profile-margin-top {
+        margin-top: 16px;
+    }
+
 }
 
 @media only screen and (max-width: 425px){
