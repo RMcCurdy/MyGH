@@ -107,7 +107,7 @@ const Search = () => {
             {animation === true ? (
                 <div
                     style={{ marginTop: '113px' }}
-                    className='transition-and-fade-container'>
+                    className='transition-and-fade-out-container'>
                     <div
                         // Height of Navbar 65px + 32px
 
@@ -135,45 +135,49 @@ const Search = () => {
                     </div>
                 </div>
             ) : (
-                <div
-                    // Height of Navbar 65px + 48px
-                    style={{ marginTop: '113px' }}
-                    className='search-main-container'>
+                <div className='transition-and-fade-in-container'>
                     <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                        }}>
-                        {/* <div className='github-logo-search-main-background' /> */}
-                        <GitHubIcon className='github-logo-search-main' />
-                        {/* To be used to display a black background behind github logo */}
-                    </div>
-                    {searchBool === false ? (
-                        <div className='search-main-error-text'>
-                            Invalid Username, Please Try Again
+                        // Height of Navbar 65px + 48px
+                        style={{ marginTop: '113px' }}
+                        className='search-main-container'>
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                            }}>
+                            {/* <div className='github-logo-search-main-background' /> */}
+                            <GitHubIcon className='github-logo-search-main' />
+                            {/* To be used to display a black background behind github logo */}
                         </div>
-                    ) : (
-                        <div className='search-main-helper-text'>
-                            Enter a GitHub Username
-                        </div>
-                    )}
+                        {searchBool === false ? (
+                            <div className='search-main-error-text'>
+                                Invalid Username, Please Try Again
+                            </div>
+                        ) : (
+                            <div className='search-main-helper-text'>
+                                Enter a GitHub Username
+                            </div>
+                        )}
 
-                    <div className='search-main-flex-container'>
-                        <CssTextField
-                            variant='outlined'
-                            onKeyPress={(ev) => {
-                                if (ev.key === 'Enter') {
-                                    handleSubmit();
-                                }
-                            }}
-                            onChange={(e) => setSearch(e.target.value)}
-                            value={search}
-                        />
-                    </div>
-                    <div className='search-main-flex-container'>
-                        <CssButton onClick={handleSubmit} variant='contained'>
-                            Search
-                        </CssButton>
+                        <div className='search-main-flex-container'>
+                            <CssTextField
+                                variant='outlined'
+                                onKeyPress={(ev) => {
+                                    if (ev.key === 'Enter') {
+                                        handleSubmit();
+                                    }
+                                }}
+                                onChange={(e) => setSearch(e.target.value)}
+                                value={search}
+                            />
+                        </div>
+                        <div className='search-main-flex-container'>
+                            <CssButton
+                                onClick={handleSubmit}
+                                variant='contained'>
+                                Search
+                            </CssButton>
+                        </div>
                     </div>
                 </div>
             )}

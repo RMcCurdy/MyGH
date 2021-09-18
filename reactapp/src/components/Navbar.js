@@ -13,15 +13,12 @@ const Navbar = () => {
         <>
             <div className='navbar-container'>
                 <div
-                    className='link'
-                    onClick={() => {
-                        handleNavbarClick('/MyGH/');
-                    }}
                     style={{
                         marginLeft: '2vw',
                         fontSize: '1.5rem',
                         display: 'flex',
                         alignItems: 'center',
+                        color: 'white',
                     }}>
                     <GitHubIcon />
                     <span style={{ paddingLeft: '0.5rem' }}>MyGH</span>
