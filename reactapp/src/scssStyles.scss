@@ -60,6 +60,7 @@ $stars-big:    generateStars(100);
 #stars-container
 {
   // background: radial-gradient(ellipse at bottom, #1B2735 0%, #191F24 100%);
+  z-index: -1;
   @include translate50;
 }
     
