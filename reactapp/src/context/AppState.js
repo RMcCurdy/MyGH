@@ -18,8 +18,7 @@ const AppState = (props) => {
     const [following, setFollowing] = useState('');
     const [numOfRepos, setNumOfRepos] = useState('');
     const [repos, setRepos] = useState([]);
-    const [languages, setLanguages] = useState([]);
-    const [languagePercentages, setLanguagePercentages] = useState([]);
+    const [languageTotals, setLanguageTotals] = useState([]);
 
     // Routes and navigation
     const [path, setPath] = useState('');
@@ -49,10 +48,8 @@ const AppState = (props) => {
                 setNumOfRepos,
                 repos,
                 setRepos,
-                languages,
-                setLanguages,
-                languagePercentages,
-                setLanguagePercentages,
+                languageTotals,
+                setLanguageTotals,
                 animation,
                 setAnimation,
             }}>

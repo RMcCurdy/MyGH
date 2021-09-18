@@ -49,10 +49,8 @@ const Search = () => {
         setNumOfRepos,
         repos,
         setRepos,
-        languages,
-        setLanguages,
-        languagePercentages,
-        setLanguagePercentages,
+        languageTotals,
+        setLanguageTotals,
         animation,
         setAnimation,
     } = useContext(AppContext);
@@ -81,7 +79,7 @@ const Search = () => {
             .then((repoData) => {
                 // TODO add in the logic for language breakdown
                 setRepos(repoData);
-                const repoLanguageArray = [];
+                let totalLanguageValues = [{}];
                 for (let i = 0; i < repoData.length; i++) {
                     const currentRepoName = repoData[i].name;
                     fetch(
@@ -89,9 +87,22 @@ const Search = () => {
                     )
                         .then((res) => res.json())
                         .then((repoLanguageData) => {
-                            repoLanguageArray.push(repoLanguageData);
+                            // Will combine all repos language totals
+                            for (let key in repoLanguageData) {
+                                if (
+                                    totalLanguageValues[0].hasOwnProperty(key)
+                                ) {
+                                    totalLanguageValues[0][key] =
+                                        totalLanguageValues[0][key] +
+                                        repoLanguageData[key];
+                                } else {
+                                    totalLanguageValues[0][key] =
+                                        repoLanguageData[key];
+                                }
+                            }
                         });
                 }
+                setLanguageTotals(totalLanguageValues);
             });
     };
 
