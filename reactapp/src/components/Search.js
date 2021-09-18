@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -40,16 +40,13 @@ const Search = () => {
         searchBool,
         setSearchBool,
         setName,
-        userName,
         setUserName,
         setAvatar,
         setBio,
         setFollowers,
         setFollowing,
         setNumOfRepos,
-        repos,
         setRepos,
-        languageTotals,
         setLanguageTotals,
         animation,
         setAnimation,

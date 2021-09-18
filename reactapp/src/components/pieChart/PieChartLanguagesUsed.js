@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 import { Pie } from 'react-chartjs-2';
 import { chartColors } from './colors';
 
 const PieChartLanguagesUsed = () => {
+    const { languageTotals } = useContext(AppContext);
+
     const options = {
         elements: {
             arc: {
@@ -19,10 +22,10 @@ const PieChartLanguagesUsed = () => {
     const data = {
         maintainAspectRatio: false,
         responsive: false,
-        labels: ['a', 'b', 'c', 'd'],
+        labels: Object.keys(languageTotals[0]),
         datasets: [
             {
-                data: [300, 50, 100, 50],
+                data: Object.values(languageTotals[0]),
                 backgroundColor: chartColors,
                 hoverBackgroundColor: chartColors,
             },
