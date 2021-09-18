@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -55,6 +55,8 @@ const Search = () => {
         setLanguagePercentages,
     } = useContext(AppContext);
 
+    const [animation, setAnimation] = useState(false);
+
     const setData = ({
         name,
         login,
@@ -91,55 +93,90 @@ const Search = () => {
                     setSearchBool(false);
                 } else {
                     setData(data);
+                    setAnimation(true);
+                    setLanguagesUsed();
+                    setTimeout(() => {
+                        setSearchBool(true);
+                    }, 1000);
                 }
             });
-        setLanguagesUsed();
-        setSearchBool(true);
     };
 
     return (
         <>
-            <div
-                // Height of Navbar 65px + 48px
-                style={{ marginTop: '113px' }}
-                className='search-main-container'>
+            {animation === true ? (
                 <div
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}>
-                    {/* <div className='github-logo-search-main-background' /> */}
-                    <GitHubIcon className='github-logo-search-main' />
-                    {/* To be used to display a black background behind github logo */}
-                </div>
-                {searchBool === false ? (
-                    <div className='search-main-error-text'>
-                        Invalid Username, Please Try Again
-                    </div>
-                ) : (
-                    <div className='search-main-helper-text'>
-                        Enter a GitHub Username
-                    </div>
-                )}
+                    style={{ marginTop: '113px' }}
+                    className='transition-and-fade-container'>
+                    <div
+                        // Height of Navbar 65px + 32px
 
-                <div className='search-main-flex-container'>
-                    <CssTextField
-                        variant='outlined'
-                        onKeyPress={(ev) => {
-                            if (ev.key === 'Enter') {
-                                handleSubmit();
-                            }
-                        }}
-                        onChange={(e) => setSearch(e.target.value)}
-                        value={search}
-                    />
+                        className='search-main-container'>
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                            }}>
+                            {/* <div className='github-logo-search-main-background' /> */}
+                            <GitHubIcon className='github-logo-search-main' />
+                            {/* To be used to display a black background behind github logo */}
+                        </div>
+
+                        <div className='search-main-helper-text'>
+                            Enter a GitHub Username
+                        </div>
+
+                        <div className='search-main-flex-container'>
+                            <CssTextField variant='outlined' value={search} />
+                        </div>
+                        <div className='search-main-flex-container'>
+                            <CssButton variant='contained'>Search</CssButton>
+                        </div>
+                    </div>
                 </div>
-                <div className='search-main-flex-container'>
-                    <CssButton onClick={handleSubmit} variant='contained'>
-                        Search
-                    </CssButton>
+            ) : (
+                <div
+                    // Height of Navbar 65px + 48px
+                    style={{ marginTop: '113px' }}
+                    className='search-main-container'>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}>
+                        {/* <div className='github-logo-search-main-background' /> */}
+                        <GitHubIcon className='github-logo-search-main' />
+                        {/* To be used to display a black background behind github logo */}
+                    </div>
+                    {searchBool === false ? (
+                        <div className='search-main-error-text'>
+                            Invalid Username, Please Try Again
+                        </div>
+                    ) : (
+                        <div className='search-main-helper-text'>
+                            Enter a GitHub Username
+                        </div>
+                    )}
+
+                    <div className='search-main-flex-container'>
+                        <CssTextField
+                            variant='outlined'
+                            onKeyPress={(ev) => {
+                                if (ev.key === 'Enter') {
+                                    handleSubmit();
+                                }
+                            }}
+                            onChange={(e) => setSearch(e.target.value)}
+                            value={search}
+                        />
+                    </div>
+                    <div className='search-main-flex-container'>
+                        <CssButton onClick={handleSubmit} variant='contained'>
+                            Search
+                        </CssButton>
+                    </div>
                 </div>
-            </div>
+            )}
         </>
     );
 };

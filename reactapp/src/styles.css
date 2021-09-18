@@ -151,6 +151,13 @@ html, body {
     align-items: center;
 }
 
+.profile-back-button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60vw;
+}
+
 .profile-followers-container {
     display: flex;
     justify-content: space-between;
@@ -234,6 +241,14 @@ html, body {
     color: white;
     font-size: 1.25rem;
     font-family: 'Roboto-Light';
+}
+
+.profile-last-fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 
 @media only screen and (max-width: 1200px){
