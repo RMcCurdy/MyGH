@@ -53,9 +53,9 @@ const Search = () => {
         setLanguages,
         languagePercentages,
         setLanguagePercentages,
+        animation,
+        setAnimation,
     } = useContext(AppContext);
-
-    const [animation, setAnimation] = useState(false);
 
     const setData = ({
         name,

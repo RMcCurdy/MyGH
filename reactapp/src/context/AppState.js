@@ -6,6 +6,8 @@ const AppState = (props) => {
     const [search, setSearch] = useState('');
     const [searchBool, setSearchBool] = useState('');
 
+    const [animation, setAnimation] = useState(false);
+
     // Current user information
     const [name, setName] = useState('');
     const [userName, setUserName] = useState('');
@@ -50,6 +52,8 @@ const AppState = (props) => {
                 setLanguages,
                 languagePercentages,
                 setLanguagePercentages,
+                animation,
+                setAnimation,
             }}>
             {props.children}
         </AppContext.Provider>
