@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import { Pie } from 'react-chartjs-2';
-import { chartColors } from './colors'
-
+import { chartColors } from './colors';
 
 const PieChartLanguagesUsed = () => {
     const { languageTotals } = useContext(AppContext);
@@ -10,7 +9,7 @@ const PieChartLanguagesUsed = () => {
     let colorsToUse = [];
 
     useEffect(() => {
-        for(let i=0; i<=Object.keys(languageTotals).length; i++) {
+        for (let i = 0; i <= Object.keys(languageTotals).length; i++) {
             if (chartColors.hasOwnProperty(Object.keys(languageTotals)[i])) {
                 colorsToUse.push(chartColors[Object.keys(languageTotals)[i]]);
             } else {

@@ -52,7 +52,12 @@ const Search = () => {
         setAnimation,
     } = useContext(AppContext);
 
-    const {settingData, setSettingData, settingLanguages, setSettingLanguages} = useState(false);
+    const {
+        settingData,
+        setSettingData,
+        settingLanguages,
+        setSettingLanguages,
+    } = useState(false);
 
     const setData = ({
         name,
@@ -88,9 +93,7 @@ const Search = () => {
                         .then((repoLanguageData) => {
                             // Will combine all repos language totals
                             for (let key in repoLanguageData) {
-                                if (
-                                    totalLanguageValues.hasOwnProperty(key)
-                                ) {
+                                if (totalLanguageValues.hasOwnProperty(key)) {
                                     totalLanguageValues[key] =
                                         totalLanguageValues[key] +
                                         repoLanguageData[key];
@@ -119,7 +122,6 @@ const Search = () => {
                     setTimeout(() => {
                         setSearchBool(true);
                     }, 1500);
-                    
                 }
             });
     };
