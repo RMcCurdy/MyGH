@@ -66,7 +66,7 @@ const Profile = () => {
                             <div
                                 onClick={() => {
                                     window.open(
-                                        'https://github.com/RMcCurdy',
+                                        `https://github.com/${search}`,
                                         '_blank',
                                     );
                                 }}
@@ -160,7 +160,7 @@ const Profile = () => {
                                 <div
                                     onClick={() => {
                                         window.open(
-                                            'https://github.com/RMcCurdy',
+                                            `https://github.com/${search}`,
                                             '_blank',
                                         );
                                     }}
