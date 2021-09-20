@@ -189,7 +189,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1;
 }
 
 .profile-margin-top {
@@ -332,7 +331,6 @@ body {
     justify-content: space-around;
     width: 80vw;
     margin-top: 1.5rem;
-    z-index: 100;
 }
 
 /* ========== Charts ========== */
