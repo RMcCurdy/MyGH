@@ -1,10 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import { Pie } from 'react-chartjs-2';
-import { chartColors } from './colors';
+import { chartColors } from './colors'
+
 
 const PieChartLanguagesUsed = () => {
     const { languageTotals } = useContext(AppContext);
+
+    let colorsToUse = [];
+
+    useEffect(() => {
+        for(let i=0; i<=Object.keys(languageTotals).length; i++) {
+            if (chartColors.hasOwnProperty(Object.keys(languageTotals)[i])) {
+                colorsToUse.push(chartColors[Object.keys(languageTotals)[i]]);
+            } else {
+                colorsToUse.push('#808080');
+            }
+        }
+        console.log(colorsToUse);
+    });
 
     const options = {
         elements: {
@@ -26,8 +40,8 @@ const PieChartLanguagesUsed = () => {
         datasets: [
             {
                 data: Object.values(languageTotals),
-                backgroundColor: chartColors,
-                hoverBackgroundColor: chartColors,
+                backgroundColor: colorsToUse,
+                hoverBackgroundColor: colorsToUse,
             },
         ],
     };

@@ -76,7 +76,7 @@ const Search = () => {
             .then((repoData) => {
                 // TODO add in the logic for language breakdown
                 setRepos(repoData);
-                let totalLanguageValues = [{}];
+                let totalLanguageValues = {};
                 for (let i = 0; i < repoData.length; i++) {
                     const currentRepoName = repoData[i].name;
                     fetch(
@@ -87,22 +87,19 @@ const Search = () => {
                             // Will combine all repos language totals
                             for (let key in repoLanguageData) {
                                 if (
-                                    totalLanguageValues[0].hasOwnProperty(key)
+                                    totalLanguageValues.hasOwnProperty(key)
                                 ) {
-                                    totalLanguageValues[0][key] =
-                                        totalLanguageValues[0][key] +
+                                    totalLanguageValues[key] =
+                                        totalLanguageValues[key] +
                                         repoLanguageData[key];
                                 } else {
-                                    totalLanguageValues[0][key] =
+                                    totalLanguageValues[key] =
                                         repoLanguageData[key];
                                 }
                             }
                         });
                 }
-
-                // Add in the code to add values together for 'Other' category where less thatn 5% of total code base
-
-                setLanguageTotals(totalLanguageValues[0]);
+                setLanguageTotals(totalLanguageValues);
             });
     };
 
@@ -119,7 +116,7 @@ const Search = () => {
                     setLanguagesUsed();
                     setTimeout(() => {
                         setSearchBool(true);
-                    }, 1000);
+                    }, 1500);
                 }
             });
     };

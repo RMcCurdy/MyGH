@@ -12,7 +12,7 @@ const CssArrowBack = withStyles({
 
 const Profile = () => {
     const openGitHubUserWindow = (route) => {
-        window.open(`https://github.com/RMcCurdy?tab=${route}`, '_blank');
+        window.open(`https://github.com/${search}?tab=${route}`, '_blank');
     };
 
     const backButtonClick = () => {
