@@ -22,10 +22,10 @@ const PieChartLanguagesUsed = () => {
     const data = {
         maintainAspectRatio: false,
         responsive: false,
-        labels: Object.keys(languageTotals[0]),
+        labels: Object.keys(languageTotals),
         datasets: [
             {
-                data: Object.values(languageTotals[0]),
+                data: Object.values(languageTotals),
                 backgroundColor: chartColors,
                 hoverBackgroundColor: chartColors,
             },

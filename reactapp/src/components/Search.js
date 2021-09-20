@@ -99,7 +99,10 @@ const Search = () => {
                             }
                         });
                 }
-                setLanguageTotals(totalLanguageValues);
+
+                // Add in the code to add values together for 'Other' category where less thatn 5% of total code base
+
+                setLanguageTotals(totalLanguageValues[0]);
             });
     };
 
