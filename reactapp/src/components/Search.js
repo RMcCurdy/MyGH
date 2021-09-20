@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -51,6 +51,8 @@ const Search = () => {
         animation,
         setAnimation,
     } = useContext(AppContext);
+
+    const {settingData, setSettingData, settingLanguages, setSettingLanguages} = useState(false);
 
     const setData = ({
         name,
@@ -117,6 +119,7 @@ const Search = () => {
                     setTimeout(() => {
                         setSearchBool(true);
                     }, 1500);
+                    
                 }
             });
     };
