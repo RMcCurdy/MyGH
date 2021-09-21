@@ -7,7 +7,6 @@ const PieChartLanguagesUsed = () => {
     const { languageTotals } = useContext(AppContext);
 
     let colorsToUse = [];
-
     useEffect(() => {
         for (let i = 0; i <= Object.keys(languageTotals).length; i++) {
             if (chartColors.hasOwnProperty(Object.keys(languageTotals)[i])) {
@@ -16,7 +15,6 @@ const PieChartLanguagesUsed = () => {
                 colorsToUse.push('#808080');
             }
         }
-        console.log(colorsToUse);
     });
 
     const options = {
@@ -26,9 +24,7 @@ const PieChartLanguagesUsed = () => {
             },
         },
         animation: {
-            duration: 1000,
-            delay: 5000,
-            easing: 'easeOutQuart',
+            duration: 0,
         },
     };
 
