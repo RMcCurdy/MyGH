@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import { Pie } from 'react-chartjs-2';
 import { chartColors } from './colors';
