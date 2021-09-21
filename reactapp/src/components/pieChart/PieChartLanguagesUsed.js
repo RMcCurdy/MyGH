@@ -41,6 +41,7 @@ const PieChartLanguagesUsed = () => {
         ],
     };
 
+    // eslint-disable-next-line
     let chartInstance = null;
     return (
         <>

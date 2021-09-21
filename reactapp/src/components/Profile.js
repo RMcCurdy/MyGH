@@ -26,9 +26,7 @@ const Profile = () => {
     const {
         search,
         setSearch,
-        searchBool,
         setSearchBool,
-        name,
         userName,
         avatar,
         bio,
