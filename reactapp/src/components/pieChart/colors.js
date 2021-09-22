@@ -8,5 +8,12 @@ export const chartColors = {
     'C#': '#178600',
     Java: '#b07219',
     Python: '#3572a5',
-    Other: '#808080',
+    Hack: '#878787',
+    PHP: '#4F5D95',
+    PowerShell: '#012456',
+    Cuda: '#3a4e3a',
+    CMake: '#da3434',
+    Other: '#ededed',
+    C: '#555555',
+    'C++': '#f34b7d',
 };
