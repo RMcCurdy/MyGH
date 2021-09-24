@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -51,6 +51,8 @@ const Search = () => {
         animation,
         setAnimation,
     } = useContext(AppContext);
+
+    const [apiError, setApiError] = useState(false);
 
     const setData = ({
         name,
@@ -105,9 +107,13 @@ const Search = () => {
         fetch(`https://api.github.com/users/${search}`)
             .then((res) => res.json())
             .then((data) => {
+                console.log(data);
                 if (data.message === 'Not Found') {
                     setSearch('');
                     setSearchBool(false);
+                } else if (data.message.startsWith('API rate limit exceeded')) {
+                    setSearch('');
+                    setApiError(true);
                 } else {
                     setData(data);
                     setAnimation(true);
@@ -166,15 +172,25 @@ const Search = () => {
                             <GitHubIcon className='github-logo-search-main' />
                             {/* To be used to display a black background behind github logo */}
                         </div>
+
+                        {/* Search bar header depending on state */}
                         {searchBool === false ? (
                             <div className='search-main-error-text'>
                                 Invalid Username, Please Try Again
                             </div>
-                        ) : (
+                        ) : null}
+
+                        {apiError === true ? (
+                            <div className='search-main-error-text'>
+                                Too Many Requests, Please Try Again Later
+                            </div>
+                        ) : null}
+
+                        {apiError !== true && searchBool !== false ? (
                             <div className='search-main-helper-text'>
                                 Enter a GitHub Username
                             </div>
-                        )}
+                        ) : null}
 
                         <div className='search-main-flex-container'>
                             <CssTextField
