@@ -51,7 +51,7 @@ const PieChartLanguagesUsed = () => {
         },
         animation: {
             duration: 2000,
-            delay: 1750,
+            delay: 1500,
         },
     };
 

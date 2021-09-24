@@ -72,57 +72,53 @@ const Search = () => {
         setNumOfRepos(public_repos);
     };
 
-    const setLanguagesUsed = () => {
-        fetch(`https://api.github.com/users/${search}/repos`)
-            .then((res) => res.json())
-            .then((repoData) => {
-                // TODO add in the logic for language breakdown
-                setRepos(repoData);
-                let totalLanguageValues = {};
-                for (let i = 0; i < repoData.length; i++) {
-                    const currentRepoName = repoData[i].name;
-                    fetch(
-                        `https://api.github.com/repos/${search}/${currentRepoName}/languages`,
-                    )
-                        .then((res) => res.json())
-                        .then((repoLanguageData) => {
-                            // Will combine all repos language totals
-                            for (let key in repoLanguageData) {
-                                if (totalLanguageValues.hasOwnProperty(key)) {
-                                    totalLanguageValues[key] =
-                                        totalLanguageValues[key] +
-                                        repoLanguageData[key];
-                                } else {
-                                    totalLanguageValues[key] =
-                                        repoLanguageData[key];
-                                }
-                            }
-                        });
-                }
-                setLanguageTotals(totalLanguageValues);
-            });
+    const setLanguagesUsed = async () => {
+        const res = await fetch(`https://api.github.com/users/${search}/repos`);
+        const repoData = await res.json();
+        setRepos(repoData);
+        const langVals = await filterLanguages(repoData);
+        setLanguageTotals(langVals);
     };
 
-    const handleSubmit = () => {
-        fetch(`https://api.github.com/users/${search}`)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                if (data.message === 'Not Found') {
-                    setSearch('');
-                    setSearchBool(false);
-                } else if (data.message.startsWith('API rate limit exceeded')) {
-                    setSearch('');
-                    setApiError(true);
+    const filterLanguages = async (repoData) => {
+        let totalLanguageValues = {};
+        for (let i = 0; i < repoData.length; i++) {
+            const currentRepoName = repoData[i].name;
+            const resLang = await fetch(
+                `https://api.github.com/repos/${search}/${currentRepoName}/languages`,
+            );
+            const langData = await resLang.json();
+            for (let key in langData) {
+                if (totalLanguageValues.hasOwnProperty(key)) {
+                    totalLanguageValues[key] =
+                        totalLanguageValues[key] + langData[key];
                 } else {
-                    setData(data);
-                    setAnimation(true);
-                    setLanguagesUsed();
-                    setTimeout(() => {
-                        setSearchBool(true);
-                    }, 1500);
+                    totalLanguageValues[key] = langData[key];
                 }
-            });
+            }
+        }
+        return totalLanguageValues;
+    };
+
+    const handleSubmit = async () => {
+        const res = await fetch(`https://api.github.com/users/${search}`);
+        const data = await res.json();
+        if (data.message !== undefined) {
+            if (data.message === 'Not Found') {
+                setSearch('');
+                setSearchBool(false);
+            } else if (data.message.startsWith('API rate limit exceeded')) {
+                setSearch('');
+                setApiError(true);
+            }
+        } else {
+            await setData(data);
+            await setAnimation(true);
+            await setLanguagesUsed();
+            setTimeout(() => {
+                setSearchBool(true);
+            }, 1000);
+        }
     };
 
     return (
