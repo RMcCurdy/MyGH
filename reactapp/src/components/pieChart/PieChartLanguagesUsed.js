@@ -70,6 +70,17 @@ const PieChartLanguagesUsed = () => {
 
     // eslint-disable-next-line
     let chartInstance = null;
+
+    function isEmpty(obj) {
+        for (var prop in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, prop)) {
+                return false;
+            }
+        }
+
+        return JSON.stringify(obj) === JSON.stringify({});
+    }
+
     return (
         <>
             <div className='chart-pie-languages-used-container'>
@@ -82,13 +93,29 @@ const PieChartLanguagesUsed = () => {
                     }}>
                     Most Used Languages
                 </div>
-                <Pie
-                    data={data}
-                    options={options}
-                    ref={(input) => {
-                        chartInstance = input;
-                    }}
-                />
+                <>
+                    {isEmpty(languageTotals) ? (
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                color: 'white',
+                                fontFamily: 'Roboto-Light',
+                                fontSize: '1.25rem',
+                                padding: '8rem 0',
+                            }}>
+                            No Data.
+                        </div>
+                    ) : (
+                        <Pie
+                            data={data}
+                            options={options}
+                            ref={(input) => {
+                                chartInstance = input;
+                            }}
+                        />
+                    )}
+                </>
             </div>
         </>
     );

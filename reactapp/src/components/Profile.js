@@ -126,13 +126,7 @@ const Profile = () => {
                         </div>
                         <div className='profile-third-fade-in'>
                             <div className='profile-chart-container'>
-                                <>
-                                    {languageTotals === {} ? (
-                                        <div>No Data.</div>
-                                    ) : (
-                                        <PieChartLanguagesUsed />
-                                    )}
-                                </>
+                                <PieChartLanguagesUsed />
 
                                 {/* TODO add 2 more charts here */}
                             </div>

@@ -78,6 +78,7 @@ const Search = () => {
         setRepos(repoData);
         const langVals = await filterLanguages(repoData);
         setLanguageTotals(langVals);
+        console.log(langVals);
     };
 
     const filterLanguages = async (repoData) => {
