@@ -35,6 +35,7 @@ const Profile = () => {
         numOfRepos,
         animation,
         setAnimation,
+        languageTotals,
     } = useContext(AppContext);
 
     return (
@@ -125,7 +126,13 @@ const Profile = () => {
                         </div>
                         <div className='profile-third-fade-in'>
                             <div className='profile-chart-container'>
-                                <PieChartLanguagesUsed />
+                                <>
+                                    {languageTotals === {} ? (
+                                        <div>No Data.</div>
+                                    ) : (
+                                        <PieChartLanguagesUsed />
+                                    )}
+                                </>
 
                                 {/* TODO add 2 more charts here */}
                             </div>
