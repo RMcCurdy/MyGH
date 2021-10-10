@@ -53,6 +53,10 @@ const PieChartLanguagesUsed = () => {
             duration: 2000,
             delay: 1500,
         },
+        labels: {
+            fontColor: 'green',
+            fontSize: 18,
+        },
     };
 
     const data = {
@@ -62,6 +66,7 @@ const PieChartLanguagesUsed = () => {
         datasets: [
             {
                 data: valuesToUse,
+                color: 'white',
                 backgroundColor: colorsToUse,
                 hoverBackgroundColor: colorsToUse,
             },
@@ -103,7 +108,7 @@ const PieChartLanguagesUsed = () => {
                                 color: 'white',
                                 fontFamily: 'Roboto-Light',
                                 fontSize: '1.25rem',
-                                padding: '9rem 0',
+                                padding: '8vw 0',
                             }}>
                             No Data.
                         </div>

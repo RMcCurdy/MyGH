@@ -6,7 +6,7 @@ const LargestRepos = () => {
 
     return (
         <>
-            <div className='chart-pie-languages-used-container'>
+            <div style={{ height: '100%' }} className='chart-pie-languages-used-container'>
                 <div
                     style={{
                         display: 'flex',
@@ -19,7 +19,7 @@ const LargestRepos = () => {
                 </div>
                 {repoSizeNames.length > 0 ? (
                     <>
-                        {repoSizeNames[0] !== null ? (
+                        {repoSizeNames[0] !== undefined ? (
                             <>
                                 <div
                                     style={{
@@ -33,7 +33,7 @@ const LargestRepos = () => {
                                     <span style={{ fontFamily: 'Roboto-Medium', marginRight: '0.5rem' }}>#1</span>
                                     {repoSizeNames[0]}
                                 </div>
-                                {repoSizeNames[1] !== null ? (
+                                {repoSizeNames[1] !== undefined ? (
                                     <>
                                         <div
                                             style={{
@@ -44,10 +44,10 @@ const LargestRepos = () => {
                                                 fontFamily: 'Roboto-Light',
                                                 marginTop: '0.75rem',
                                             }}>
-                                            <span style={{ fontFamily: 'Roboto-Medium', marginRight: '0.5rem' }}>#2</span>
+                                            <span style={{ fontFamily: 'Roboto-Medium', marginRight: '0.65rem' }}>#2</span>
                                             {repoSizeNames[1]}
                                         </div>
-                                        {repoSizeNames[2] !== null ? (
+                                        {repoSizeNames[2] !== undefined ? (
                                             <>
                                                 <div
                                                     style={{
@@ -58,10 +58,10 @@ const LargestRepos = () => {
                                                         fontFamily: 'Roboto-Light',
                                                         marginTop: '0.75rem',
                                                     }}>
-                                                    <span style={{ fontFamily: 'Roboto-Medium', marginRight: '0.5rem' }}>#3</span>
+                                                    <span style={{ fontFamily: 'Roboto-Medium', marginRight: '0.8rem' }}>#3</span>
                                                     {repoSizeNames[2]}
                                                 </div>
-                                                {repoSizeNames[3] !== null ? (
+                                                {repoSizeNames[3] !== undefined ? (
                                                     <>
                                                         <div
                                                             style={{
@@ -75,13 +75,13 @@ const LargestRepos = () => {
                                                             <span
                                                                 style={{
                                                                     fontFamily: 'Roboto-Medium',
-                                                                    marginRight: '0.5rem',
+                                                                    marginRight: '0.95rem',
                                                                 }}>
                                                                 #4
                                                             </span>
                                                             {repoSizeNames[3]}
                                                         </div>
-                                                        {repoSizeNames[4] !== null ? (
+                                                        {repoSizeNames[4] !== undefined ? (
                                                             <>
                                                                 <div
                                                                     style={{
@@ -95,7 +95,7 @@ const LargestRepos = () => {
                                                                     <span
                                                                         style={{
                                                                             fontFamily: 'Roboto-Medium',
-                                                                            marginRight: '0.5rem',
+                                                                            marginRight: '1.1rem',
                                                                         }}>
                                                                         #5
                                                                     </span>
@@ -130,7 +130,7 @@ const LargestRepos = () => {
                             color: 'white',
                             fontFamily: 'Roboto-Light',
                             fontSize: '1.25rem',
-                            padding: '11vw 0',
+                            padding: '8vw 0',
                         }}>
                         No Data.
                     </div>
