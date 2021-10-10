@@ -124,6 +124,7 @@ const Search = () => {
 
     return (
         <>
+            {/* The animation boolean is used for translating the user input section */}
             {animation === true ? (
                 <div
                     style={{ marginTop: '161px' }}
@@ -189,6 +190,7 @@ const Search = () => {
                             </div>
                         ) : null}
 
+                        {/* Search Field for Username input */}
                         <div className='search-main-flex-container'>
                             <CssTextField
                                 variant='outlined'
@@ -201,6 +203,7 @@ const Search = () => {
                                 value={search}
                             />
                         </div>
+                        {/* Button to click for searching username */}
                         <div className='search-main-flex-container'>
                             <CssButton
                                 onClick={handleSubmit}
