@@ -47,22 +47,16 @@ const Search = () => {
         setFollowing,
         setNumOfRepos,
         setRepos,
+        repos,
         setLanguageTotals,
         animation,
         setAnimation,
+        setRepoSizeNames,
     } = useContext(AppContext);
 
     const [apiError, setApiError] = useState(false);
 
-    const setData = ({
-        name,
-        login,
-        avatar_url,
-        bio,
-        followers,
-        following,
-        public_repos,
-    }) => {
+    const setData = ({ name, login, avatar_url, bio, followers, following, public_repos }) => {
         setName(name);
         setUserName(login);
         setAvatar(avatar_url);
@@ -81,18 +75,42 @@ const Search = () => {
         console.log(langVals);
     };
 
+    const setRepoSizes = async () => {
+        const res = await fetch(`https://api.github.com/users/${search}/repos`);
+        const sizeData = await res.json();
+        let repoSize = [];
+        let sortedRepoNamesForSize = [];
+        for (let i = 0; i < sizeData.length; i++) {
+            if (i === 0) {
+                repoSize.push(sizeData[i].size);
+                sortedRepoNamesForSize.push(sizeData[i].name);
+            } else {
+                let repoSizeLength = repoSize.length;
+                for (let j = 0; j < repoSizeLength; j++) {
+                    if (sizeData[i].size > repoSize[j]) {
+                        repoSize.splice(j, 0, sizeData[i].size);
+                        sortedRepoNamesForSize.splice(j, 0, sizeData[i].name);
+                        break;
+                    }
+                }
+                if (repoSize[repoSizeLength - 1] > sizeData[i].size) {
+                    repoSize.push(sizeData[i].size);
+                    sortedRepoNamesForSize.push(sizeData[i].name);
+                }
+            }
+        }
+        setRepoSizeNames(sortedRepoNamesForSize);
+    };
+
     const filterLanguages = async (repoData) => {
         let totalLanguageValues = {};
         for (let i = 0; i < repoData.length; i++) {
             const currentRepoName = repoData[i].name;
-            const resLang = await fetch(
-                `https://api.github.com/repos/${search}/${currentRepoName}/languages`,
-            );
+            const resLang = await fetch(`https://api.github.com/repos/${search}/${currentRepoName}/languages`);
             const langData = await resLang.json();
             for (let key in langData) {
                 if (totalLanguageValues.hasOwnProperty(key)) {
-                    totalLanguageValues[key] =
-                        totalLanguageValues[key] + langData[key];
+                    totalLanguageValues[key] = totalLanguageValues[key] + langData[key];
                 } else {
                     totalLanguageValues[key] = langData[key];
                 }
@@ -113,9 +131,10 @@ const Search = () => {
                 setApiError(true);
             }
         } else {
-            await setData(data);
             await setAnimation(true);
+            await setData(data);
             await setLanguagesUsed();
+            await setRepoSizes();
             setTimeout(() => {
                 setSearchBool(true);
             }, 1000);
@@ -126,9 +145,7 @@ const Search = () => {
         <>
             {/* The animation boolean is used for translating the user input section */}
             {animation === true ? (
-                <div
-                    style={{ marginTop: '161px' }}
-                    className='transition-and-fade-out-container'>
+                <div style={{ marginTop: '161px' }} className='transition-and-fade-out-container'>
                     <div
                         // Height of Navbar 65px + 32px
 
@@ -143,9 +160,7 @@ const Search = () => {
                             {/* To be used to display a black background behind github logo */}
                         </div>
 
-                        <div className='search-main-helper-text'>
-                            Enter a GitHub Username
-                        </div>
+                        <div className='search-main-helper-text'>Enter a GitHub Username</div>
 
                         <div className='search-main-flex-container'>
                             <CssTextField variant='outlined' value={search} />
@@ -172,23 +187,11 @@ const Search = () => {
                         </div>
 
                         {/* Search bar header depending on state */}
-                        {searchBool === false ? (
-                            <div className='search-main-error-text'>
-                                Invalid Username, Please Try Again
-                            </div>
-                        ) : null}
+                        {searchBool === false ? <div className='search-main-error-text'>Invalid Username, Please Try Again</div> : null}
 
-                        {apiError === true ? (
-                            <div className='search-main-error-text'>
-                                Too Many Requests, Please Try Again Later
-                            </div>
-                        ) : null}
+                        {apiError === true ? <div className='search-main-error-text'>Too Many Requests, Please Try Again Later</div> : null}
 
-                        {apiError !== true && searchBool !== false ? (
-                            <div className='search-main-helper-text'>
-                                Enter a GitHub Username
-                            </div>
-                        ) : null}
+                        {apiError !== true && searchBool !== false ? <div className='search-main-helper-text'>Enter a GitHub Username</div> : null}
 
                         {/* Search Field for Username input */}
                         <div className='search-main-flex-container'>
@@ -205,9 +208,7 @@ const Search = () => {
                         </div>
                         {/* Button to click for searching username */}
                         <div className='search-main-flex-container'>
-                            <CssButton
-                                onClick={handleSubmit}
-                                variant='contained'>
+                            <CssButton onClick={handleSubmit} variant='contained'>
                                 Search
                             </CssButton>
                         </div>

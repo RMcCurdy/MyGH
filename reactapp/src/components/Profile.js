@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import PieChartLanguagesUsed from './pieChart/PieChartLanguagesUsed';
+import LargestRepos from './list/LargestRepos';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -23,33 +24,16 @@ const Profile = () => {
         }, 1000);
     };
 
-    const {
-        search,
-        setSearch,
-        setSearchBool,
-        userName,
-        avatar,
-        bio,
-        followers,
-        following,
-        numOfRepos,
-        animation,
-        setAnimation,
-        languageTotals,
-    } = useContext(AppContext);
+    const { search, setSearch, setSearchBool, userName, avatar, bio, followers, following, numOfRepos, animation, setAnimation, languageTotals } = useContext(AppContext);
 
     return (
         <>
             {animation === true ? (
                 <>
                     <div className='profile-container profile-margin-top'>
-                        <div
-                            onClick={backButtonClick}
-                            className='profile-last-fade-in profile-back-button link'>
+                        <div onClick={backButtonClick} className='profile-last-fade-in profile-back-button link'>
                             <CssArrowBack />
-                            <span className='profile-back-button-text'>
-                                Back
-                            </span>
+                            <span className='profile-back-button-text'>Back</span>
                         </div>
                         <div className='profile-first-fade-in'>
                             <div
@@ -57,17 +41,11 @@ const Profile = () => {
                                     display: 'flex',
                                     justifyContent: 'center',
                                 }}>
-                                <img
-                                    className='profile-avatar'
-                                    src={avatar}
-                                    alt='avatar'></img>
+                                <img className='profile-avatar' src={avatar} alt='avatar'></img>
                             </div>
                             <div
                                 onClick={() => {
-                                    window.open(
-                                        `https://github.com/${search}`,
-                                        '_blank',
-                                    );
+                                    window.open(`https://github.com/${search}`, '_blank');
                                 }}
                                 className='profile-username link'>
                                 {userName}
@@ -82,15 +60,11 @@ const Profile = () => {
                                 <div className='profile-followers-container'>
                                     <div
                                         onClick={() => {
-                                            openGitHubUserWindow(
-                                                'repositories',
-                                            );
+                                            openGitHubUserWindow('repositories');
                                         }}
                                         className='profile-following-count-container'>
                                         <div>{numOfRepos}</div>
-                                        <div className='profile-followers-captions link'>
-                                            Repos
-                                        </div>
+                                        <div className='profile-followers-captions link'>Repos</div>
                                     </div>
 
                                     <div
@@ -99,9 +73,7 @@ const Profile = () => {
                                         }}
                                         className='profile-following-count-container'>
                                         <div>{followers}</div>
-                                        <div className='profile-followers-captions link'>
-                                            Followers
-                                        </div>
+                                        <div className='profile-followers-captions link'>Followers</div>
                                     </div>
 
                                     <div
@@ -110,24 +82,16 @@ const Profile = () => {
                                         }}
                                         className='profile-following-count-container'>
                                         <div>{following}</div>
-                                        <div className='profile-followers-captions link'>
-                                            Following
-                                        </div>
+                                        <div className='profile-followers-captions link'>Following</div>
                                     </div>
                                 </div>
                             </div>
-                            <div className='profile-bio'>
-                                {bio === null ? (
-                                    <span>No bio.</span>
-                                ) : (
-                                    <>{bio}</>
-                                )}
-                            </div>
+                            <div className='profile-bio'>{bio === null ? <span>No bio.</span> : <>{bio}</>}</div>
                         </div>
                         <div className='profile-third-fade-in'>
                             <div className='profile-chart-container'>
                                 <PieChartLanguagesUsed />
-
+                                <LargestRepos />
                                 {/* TODO add 2 more charts here */}
                             </div>
                         </div>
@@ -137,13 +101,9 @@ const Profile = () => {
                 <>
                     <div className='transition-and-fade-out-profile-container'>
                         <div className='profile-container profile-margin-top'>
-                            <div
-                                onClick={backButtonClick}
-                                className='profile-back-button link'>
+                            <div onClick={backButtonClick} className='profile-back-button link'>
                                 <CssArrowBack />
-                                <span className='profile-back-button-text'>
-                                    Back
-                                </span>
+                                <span className='profile-back-button-text'>Back</span>
                             </div>
                             <div>
                                 <div
@@ -151,17 +111,11 @@ const Profile = () => {
                                         display: 'flex',
                                         justifyContent: 'center',
                                     }}>
-                                    <img
-                                        className='profile-avatar'
-                                        src={avatar}
-                                        alt='avatar'></img>
+                                    <img className='profile-avatar' src={avatar} alt='avatar'></img>
                                 </div>
                                 <div
                                     onClick={() => {
-                                        window.open(
-                                            `https://github.com/${search}`,
-                                            '_blank',
-                                        );
+                                        window.open(`https://github.com/${search}`, '_blank');
                                     }}
                                     className='profile-username link'>
                                     {userName}
@@ -176,57 +130,40 @@ const Profile = () => {
                                     <div className='profile-followers-container'>
                                         <div
                                             onClick={() => {
-                                                openGitHubUserWindow(
-                                                    'repositories',
-                                                );
+                                                openGitHubUserWindow('repositories');
                                             }}
                                             className='profile-following-count-container'>
                                             <div>{numOfRepos}</div>
-                                            <div className='profile-followers-captions link'>
-                                                Repos
-                                            </div>
+                                            <div className='profile-followers-captions link'>Repos</div>
                                         </div>
 
                                         <div
                                             onClick={() => {
-                                                openGitHubUserWindow(
-                                                    'followers',
-                                                );
+                                                openGitHubUserWindow('followers');
                                             }}
                                             className='profile-following-count-container'>
                                             <div>{followers}</div>
-                                            <div className='profile-followers-captions link'>
-                                                Followers
-                                            </div>
+                                            <div className='profile-followers-captions link'>Followers</div>
                                         </div>
 
                                         <div
                                             onClick={() => {
-                                                openGitHubUserWindow(
-                                                    'following',
-                                                );
+                                                openGitHubUserWindow('following');
                                             }}
                                             className='profile-following-count-container'>
                                             <div>{following}</div>
-                                            <div className='profile-followers-captions link'>
-                                                Following
-                                            </div>
+                                            <div className='profile-followers-captions link'>Following</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className='profile-bio'>
-                                    <div className='profile-bio'>
-                                        {bio === null ? (
-                                            <span>No bio.</span>
-                                        ) : (
-                                            <>{bio}</>
-                                        )}
-                                    </div>
+                                    <div className='profile-bio'>{bio === null ? <span>No bio.</span> : <>{bio}</>}</div>
                                 </div>
                             </div>
                             <div>
                                 <div className='profile-chart-container'>
                                     <PieChartLanguagesUsed />
+                                    <LargestRepos />
                                 </div>
                             </div>
                         </div>

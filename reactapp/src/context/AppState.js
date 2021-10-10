@@ -19,6 +19,7 @@ const AppState = (props) => {
     const [numOfRepos, setNumOfRepos] = useState('');
     const [repos, setRepos] = useState([]);
     const [languageTotals, setLanguageTotals] = useState([]);
+    const [repoSizeNames, setRepoSizeNames] = useState([]);
 
     // Routes and navigation
     const [path, setPath] = useState('');
@@ -52,6 +53,8 @@ const AppState = (props) => {
                 setLanguageTotals,
                 animation,
                 setAnimation,
+                repoSizeNames,
+                setRepoSizeNames,
             }}>
             {props.children}
         </AppContext.Provider>

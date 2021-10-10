@@ -90,6 +90,7 @@ const PieChartLanguagesUsed = () => {
                         justifyContent: 'center',
                         color: 'white',
                         fontFamily: 'Roboto-Regular',
+                        fontSize: '1.25rem',
                     }}>
                     Most Used Languages
                 </div>
@@ -102,7 +103,7 @@ const PieChartLanguagesUsed = () => {
                                 color: 'white',
                                 fontFamily: 'Roboto-Light',
                                 fontSize: '1.25rem',
-                                padding: '8rem 0',
+                                padding: '9rem 0',
                             }}>
                             No Data.
                         </div>
