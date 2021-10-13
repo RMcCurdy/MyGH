@@ -90,6 +90,7 @@ const Profile = () => {
                         </div>
                         <div className='profile-third-fade-in'>
                             <div className='profile-chart-container'>
+                                {/* Add up to 3 boxes here */}
                                 <LargestRepos />
                                 <PieChartLanguagesUsed />
                             </div>
