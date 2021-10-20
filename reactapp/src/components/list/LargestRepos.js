@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 
 const LargestRepos = () => {
-    const { repoSizeNames } = useContext(AppContext);
+    const { repoSizeNames, search } = useContext(AppContext);
 
     return (
         <>
@@ -31,7 +31,13 @@ const LargestRepos = () => {
                                         marginTop: '0.75rem',
                                     }}>
                                     <span style={{ fontFamily: 'Roboto-Medium', marginRight: '0.5rem' }}>#1</span>
-                                    {repoSizeNames[0]}
+                                    <span
+                                        className='link'
+                                        onClick={() => {
+                                            window.open(`https://github.com/${search}/${repoSizeNames[0]}`, '_blank');
+                                        }}>
+                                        {repoSizeNames[0]}
+                                    </span>
                                 </div>
                                 {repoSizeNames[1] !== undefined ? (
                                     <>
@@ -45,7 +51,13 @@ const LargestRepos = () => {
                                                 marginTop: '0.75rem',
                                             }}>
                                             <span style={{ fontFamily: 'Roboto-Medium', marginRight: '0.65rem' }}>#2</span>
-                                            {repoSizeNames[1]}
+                                            <span
+                                                className='link'
+                                                onClick={() => {
+                                                    window.open(`https://github.com/${search}/${repoSizeNames[1]}`, '_blank');
+                                                }}>
+                                                {repoSizeNames[1]}
+                                            </span>
                                         </div>
                                         {repoSizeNames[2] !== undefined ? (
                                             <>
@@ -59,7 +71,13 @@ const LargestRepos = () => {
                                                         marginTop: '0.75rem',
                                                     }}>
                                                     <span style={{ fontFamily: 'Roboto-Medium', marginRight: '0.8rem' }}>#3</span>
-                                                    {repoSizeNames[2]}
+                                                    <span
+                                                        className='link'
+                                                        onClick={() => {
+                                                            window.open(`https://github.com/${search}/${repoSizeNames[2]}`, '_blank');
+                                                        }}>
+                                                        {repoSizeNames[2]}
+                                                    </span>
                                                 </div>
                                                 {repoSizeNames[3] !== undefined ? (
                                                     <>
@@ -79,7 +97,13 @@ const LargestRepos = () => {
                                                                 }}>
                                                                 #4
                                                             </span>
-                                                            {repoSizeNames[3]}
+                                                            <span
+                                                                className='link'
+                                                                onClick={() => {
+                                                                    window.open(`https://github.com/${search}/${repoSizeNames[3]}`, '_blank');
+                                                                }}>
+                                                                {repoSizeNames[3]}
+                                                            </span>
                                                         </div>
                                                         {repoSizeNames[4] !== undefined ? (
                                                             <>
@@ -99,7 +123,13 @@ const LargestRepos = () => {
                                                                         }}>
                                                                         #5
                                                                     </span>
-                                                                    {repoSizeNames[4]}
+                                                                    <span
+                                                                        className='link'
+                                                                        onClick={() => {
+                                                                            window.open(`https://github.com/${search}/${repoSizeNames[4]}`, '_blank');
+                                                                        }}>
+                                                                        {repoSizeNames[4]}
+                                                                    </span>
                                                                 </div>
                                                             </>
                                                         ) : (
