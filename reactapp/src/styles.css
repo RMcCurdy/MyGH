@@ -343,6 +343,14 @@ body {
     background-color: #1f272d;
 }
 
+.list-largest-repos-container {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Roboto-Regular';
+    font-size: 1.25rem;
+}
+
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
     .github-logo-search-main {

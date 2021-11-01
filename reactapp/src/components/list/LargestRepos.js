@@ -7,16 +7,8 @@ const LargestRepos = () => {
     return (
         <>
             <div style={{ height: '100%' }} className='chart-pie-languages-used-container'>
-                <div
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        color: 'white',
-                        fontFamily: 'Roboto-Regular',
-                        fontSize: '1.25rem',
-                    }}>
-                    Largest Repositories
-                </div>
+                <div className='list-largest-repos-container'>Largest Repositories</div>
+                {/* Only display up to 5 repos and check whether there is info as you go down the list */}
                 {repoSizeNames.length > 0 ? (
                     <>
                         {repoSizeNames[0] !== undefined ? (
