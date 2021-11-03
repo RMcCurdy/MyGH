@@ -29,6 +29,7 @@ const Profile = () => {
     return (
         <>
             {animation === true ? (
+                // This is what is shown when going back to the search menu
                 <>
                     <div className='profile-container profile-margin-top'>
                         <div onClick={backButtonClick} className='profile-last-fade-in profile-back-button link'>
