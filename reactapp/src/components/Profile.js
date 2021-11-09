@@ -58,6 +58,7 @@ const Profile = () => {
                                     display: 'flex',
                                     justifyContent: 'center',
                                 }}>
+                                {/* Display the users numbers for repos, followers, and following */}
                                 <div className='profile-followers-container'>
                                     <div
                                         onClick={() => {
